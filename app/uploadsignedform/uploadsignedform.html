@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="well well-ro" data-ng-init="ro.signedForm = 'signedForm'">
+      <div data-ng-include src="ro.returnPartial('signedForm')" data-ng-if="ro.signedForm == 'signedForm'"></div>
+
+      <div data-ng-include src="ro.returnPartial('thankyou')" data-ng-if="ro.signedForm == 'thankyou'"></div>
+    </div>
+  </div>
+</div>

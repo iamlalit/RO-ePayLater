@@ -8,9 +8,10 @@
 	angular.module('ro-app', [
 		//Third party dependencies
 		'ui.router',
-
+		//Application specific
 		'mdnid.module',
 		'otp.module',
-		'user.module'
+		'user.module',
+		'signedForm.module'
 	]);
 })();

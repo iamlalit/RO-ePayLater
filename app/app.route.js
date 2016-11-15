@@ -24,6 +24,12 @@
 				templateUrl: 'userdetails/userdetails.html',
     		controller: 'userCntl',
     		controllerAs: 'ro'
+			}).
+			state('signedform', {
+				url: '/signedform',
+				templateUrl: 'uploadsignedform/uploadsignedform.html',
+    		controller: 'signedFormCntl',
+    		controllerAs: 'ro'
 			})
 
 			$urlRouterProvider.otherwise('/');
