@@ -1,14 +1,12 @@
 (function(){
 	'use strict'
 
-	angular.module('olympia-app')
-		.service('olympiaService', olympiaService);
+	angular.module('ro-app')
+		.service('roService', roService);
 
-	olympiaService.$inject = [];
+	roService.$inject = [];
 
-	function olympiaService(){
-		var _this = this;
-
+	function roService(){
 
 	}
 })();

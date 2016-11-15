@@ -1,9 +1,3 @@
-/*
-#	Author : Harsh Kumar Lamba
-#	Date : 20th June 2015
-#	Description : Main Application Sass file
-*/
-
 //Fonts
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
@@ -22,7 +16,6 @@
 @import "base/normalizerUpdated.scss";
 
 //Components
-@import "components/grids.scss";
 @import "components/headings.scss";
 @import "components/buttons.scss";
 @import "components/form.scss";

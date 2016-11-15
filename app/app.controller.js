@@ -2,11 +2,11 @@
 	'use strict'
 
 	angular.module('ro-app')
-		.controller('roCntl', olympiaCntl);
+		.controller('roCntl', roCntl);
 
-	roCntl.$inject = ['$window', '$rootScope', 'roService'];
+	roCntl.$inject = ['roService'];
 
-	function roCntl($window, $rootScope, roService){
+	function roCntl(roService){
 		var vm = this;
 
 		activate();
