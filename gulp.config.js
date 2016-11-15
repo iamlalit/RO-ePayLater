@@ -30,13 +30,7 @@ module.exports = function() {
             assets + '/libs/jquery.min.js',
             assets + '/libs/bootstrap.min.js',
             assets + '/libs/angular.min.js',
-            assets + '/libs/angular-ui-router.min.js',
-            assets + '/libs/jquery-ui.js',
-            assets + '/libs/moment.min.js',
-            assets + '/libs/bootstrap-datetimepicker.min.js',
-            assets + '/libs/jquery.comiseo.daterangepicker.js',
-            assets + '/libs/select2.full.min.js',
-            assets + '/libs/angular-cookies.min.js'
+            assets + '/libs/angular-ui-router.min.js'
         ],
         allLibCss : [
             assets + '/libs/*.css'
@@ -49,13 +43,12 @@ module.exports = function() {
         htmltemplates: client + '**/*.html',
         images: client + 'images/**/*.*',
         index: client + '**/index.html',
-        //index: './jobs/src/**/index.html',
         js: [
             client + 'components/**/*.module.js',
             client + 'components/**/*.js'
         ],
-        sass: client + '/**/*.scss',
-        sassRoot: client + '/assets/styles/app.scss',
+        sass: assets + '/**/*.scss',
+        sassRoot: assets + '/styles/app.scss',
         root: root,
         sassCache: sassCache,
         serverOptions : {
@@ -123,9 +116,7 @@ module.exports = function() {
      */
     config.getWiredepDefaultOptions = function() {
         var options = {
-            bowerJson: config.bower.json,
-            //directory: config.bower.directory,
-            //ignorePath: config.bower.ignorePath
+            bowerJson: config.bower.json
         };
         return options;
     };

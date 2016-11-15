@@ -1,22 +1,10 @@
 (function(){
 	'use strict'
 
-	//Manual bootstrap application
-	google.charts.load('current', {'packages':['corechart', 'bar']});
+	angular.bootstrap(document.body, ['ro-app']);
 
-	google.charts.setOnLoadCallback(function() {
-	  angular.bootstrap(document.body, ['olympia-app']);
-	});
-
-	angular.module('olympia-app', [
+	angular.module('ro-app', [
 		//Third party dependencies
-		'ui.router',
-		'ngCookies',
-		//Application
-		'loader.module',
-		'common.module',
-		'opvolging.module',
-		'activiteiten.module',
-		'kangetallen.module'
+		'ui.router'
 	]);
 })();

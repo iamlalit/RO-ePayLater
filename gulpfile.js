@@ -36,30 +36,16 @@ gulp.task('styles', [], function() {
         .pipe($.plumber()) // exit gracefully if something fails after this
         .pipe($.sass())
         .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.build));
 });
 
-
 /**
- * Watch and 
+ * Watch and
  * Compile Sass to CSS
  */
 gulp.task('styles-watcher', function() {
     gulp.watch([config.sass], ['styles']);
 });
-
-
-/**
-* Compress css libraries
-*/
-gulp.task('compress-lib-css', function(){
-    return gulp
-        .src(config.allLibCss)
-        .pipe($.concat(config.optimized.css))
-        .pipe($.cleanCSS())
-        .pipe(gulp.dest(config.temp)); 
-});
-
 
 /**
 * Compress app and js libraries
@@ -70,19 +56,20 @@ gulp.task('compress-lib-js', function(){
         .src(config.allLibjs)
         .pipe($.concat(config.optimized.lib))
         .pipe($.uglify())
-        .pipe(gulp.dest(config.build)); 
+        .pipe(gulp.dest(config.build));
 });
+
 gulp.task('compress-app-js', function(){
 
     return gulp
         .src(config.allAppJs)
         .pipe($.concat(config.optimized.app), {newLine: ';'})
         //.pipe($.uglify())
-        .pipe(gulp.dest(config.build)); 
+        .pipe(gulp.dest(config.build));
 });
 
 /**
- * Watch and 
+ * Watch and
  * Compile all controller, services and modules
  */
 gulp.task('js-watcher', function() {
@@ -103,18 +90,16 @@ gulp.task('webserver', function() {
 /**
 * Multiple task in one -- Webserver , styles-watcher
 */
-gulp.task('run', ['compress-lib-js', 'compress-app-js', 'webserver', 'js-watcher'], function(){
+gulp.task('run', ['styles', 'compress-lib-js', 'compress-app-js', 'webserver', 'js-watcher', 'styles-watcher'], function(){
     log('Webserver and style watcher running');
 });
 
 /**
 * Test Environment -- Styles, Compress-js and Compress-app
 */
-gulp.task('testEnvironment', ['styles', 'compress-lib-css', 'compress-lib-js', 'compress-app-js'], function(){
+gulp.task('testEnvironment', ['styles', 'compress-lib-js', 'compress-app-js'], function(){
     log('test Environment');
 });
-
-
 
 /**
  * When files change, log it
@@ -125,7 +110,6 @@ function changeEvent(event) {
     log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
 }
 
-
 /**
  * Log an error message and emit the end of a task
  */
@@ -135,7 +119,6 @@ function errorLogger(error) {
     log('*** End of Error ***');
     this.emit('end');
 }
-
 
 /**
  * Log a message or series of messages using chalk's blue color.

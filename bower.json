@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "ePayLater",
   "version": "0.1.0",
   "description": "",
   "ignore": [
@@ -13,7 +13,6 @@
     "bootstrap": "~3.3.2",
     "jquery": "~2.1.3",
     "angular": "1.5.7",
-    "angular-ui-router": "^0.3.1",
-    "angular-ui-select": "^0.18.1"
+    "angular-ui-router": "^0.3.1"
   }
 }
