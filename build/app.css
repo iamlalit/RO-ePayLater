@@ -6765,6 +6765,12 @@ button.close {
 .padding.top-2x {
   padding-top: 30px; }
 
+.padding.top-3x {
+  padding-top: 40px; }
+
+.padding.top-4x {
+  padding-top: 50px; }
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
@@ -6801,12 +6807,16 @@ h1 {
   padding: 9px 20px; }
 
 .form-group label {
+  display: block;
   font-weight: 500; }
   .form-group label.size-2x {
     font-size: 1.3em; }
 
-.form-group input.form-control,
-.form-group textarea.form-control {
+.form-group input[type="text"].form-control,
+.form-group input[type="email"].form-control,
+.form-group input[type="number"].form-control,
+.form-group textarea.form-control,
+.form-group select.form-control {
   min-height: 42px;
   padding: 9px 12px 9px 12px;
   border: 2px solid #e0e0e0;
@@ -6814,6 +6824,9 @@ h1 {
   color: #494949;
   font-size: 1.1em;
   line-height: 20px; }
-  .form-group input.form-control:focus,
-  .form-group textarea.form-control:focus {
+  .form-group input[type="text"].form-control:focus,
+  .form-group input[type="email"].form-control:focus,
+  .form-group input[type="number"].form-control:focus,
+  .form-group textarea.form-control:focus,
+  .form-group select.form-control:focus {
     border-color: #3F79BD; }

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="well well-ro" data-ng-init="ro.userDetailsSection = 'roOrRmo';">
+      <div data-ng-include src="ro.returnPartial('roOrRmo')" data-ng-if="ro.userDetailsSection !== 'roOrRmo'"></div>
+
+      <div data-ng-include src="ro.returnPartial('userBasicDetails')" data-ng-if="ro.userDetailsSection == 'userBasicDetails'"></div>
+
+      <div data-ng-include src="ro.returnPartial('userAddressDetails')" data-ng-if="ro.userDetailsSection == 'userAddressDetails'"></div>
+
+      <div data-ng-include src="ro.returnPartial('userLoanDetails')" data-ng-if="ro.userDetailsSection == 'userLoanDetails'"></div>
+
+      <div data-ng-include src="ro.returnPartial('userDownloadForm')"></div>
+    </div>
+  </div>
+</div>

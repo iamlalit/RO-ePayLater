@@ -18,6 +18,12 @@
 				templateUrl: 'otp/otp.html',
     		controller: 'otpCntl',
     		controllerAs: 'ro'
+			}).
+			state('userdetails', {
+				url: '/userdetails',
+				templateUrl: 'userdetails/userdetails.html',
+    		controller: 'userCntl',
+    		controllerAs: 'ro'
 			})
 
 			$urlRouterProvider.otherwise('/');

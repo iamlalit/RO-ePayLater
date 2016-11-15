@@ -1,13 +1,17 @@
 .form-group{
 	label{
+		display: block;
 		font-weight:$form-label-weight;
 		&.size-2x{
 			font-size:1.3em
 		}
 	}
 
-  input,
-  textarea{
+  input[type="text"],
+	input[type="email"],
+	input[type="number"],
+  textarea,
+	select{
     &.form-control{
       min-height: 42px;
       padding: 9px 12px 9px 12px;

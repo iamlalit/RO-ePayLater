@@ -10,6 +10,7 @@
 		'ui.router',
 
 		'mdnid.module',
-		'otp.module'
+		'otp.module',
+		'user.module'
 	]);
 })();
