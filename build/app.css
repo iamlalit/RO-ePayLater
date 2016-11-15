@@ -6747,6 +6747,24 @@ button.close {
 .fa-medium:before {
   content: ""; }
 
+.widget.widget-left {
+  border-left: 2px solid #ddd; }
+
+.well.well-ro {
+  margin: 20px;
+  background: #F7F6F6;
+  border: 0;
+  box-shadow: none; }
+
+.padding.top-0x {
+  padding-top: 10px; }
+
+.padding.top-1x {
+  padding-top: 20px; }
+
+.padding.top-2x {
+  padding-top: 30px; }
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
@@ -6760,3 +6778,42 @@ body {
 /*angularjs directive display none*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
+
+h1 {
+  font-size: 1.5em;
+  margin: 0 0 20px;
+  color: #666666; }
+
+.btn.btn-default {
+  color: #fff;
+  background-color: #9E9E9E; }
+  .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover {
+    color: #fff;
+    background-color: #9E9E9E; }
+
+.btn.btn-primary {
+  border-color: #3F79BD;
+  background-color: #3F79BD;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  min-height: 42px;
+  padding: 9px 20px; }
+
+.form-group label {
+  font-weight: 500; }
+  .form-group label.size-2x {
+    font-size: 1.3em; }
+
+.form-group input.form-control,
+.form-group textarea.form-control {
+  min-height: 42px;
+  padding: 9px 12px 9px 12px;
+  border: 2px solid #e0e0e0;
+  box-shadow: none;
+  color: #494949;
+  font-size: 1.1em;
+  line-height: 20px; }
+  .form-group input.form-control:focus,
+  .form-group textarea.form-control:focus {
+    border-color: #3F79BD; }

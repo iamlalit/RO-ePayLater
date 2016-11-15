@@ -1,0 +1,13 @@
+.widget{
+  &.widget-left{
+    border-left: 2px solid #ddd;
+  }
+}
+.well{
+  &.well-ro{
+    margin: 20px;
+    background: #F7F6F6;
+    border: 0;
+    box-shadow: none;
+  }
+}
