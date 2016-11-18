@@ -6747,11 +6747,8 @@ button.close {
 .fa-medium:before {
   content: ""; }
 
-.widget.widget-left {
-  border-left: 2px solid #ddd; }
-
 .well.well-ro {
-  margin: 20px;
+  margin: 0;
   background: #F7F6F6;
   border: 0;
   box-shadow: none; }
@@ -6878,6 +6875,29 @@ h1 {
   .form-group select.form-control:focus {
     border-color: #3F79BD; }
 
+.form-group input.form-control.validation-error,
+.form-group textarea.form-control.validation-error {
+  border-color: #d9534f; }
+  .form-group input.form-control.validation-error:focus,
+  .form-group textarea.form-control.validation-error:focus {
+    border-color: #d9534f; }
+
+.form-group .input-group {
+  width: 100%; }
+  .form-group .input-group .input-group-addon.exclamation {
+    background: white;
+    border-left: 0;
+    color: #d9534f;
+    font-size: 22px;
+    padding: 0 5px;
+    position: absolute;
+    top: 10px;
+    border: 0;
+    z-index: 99;
+    right: 20px; }
+    .form-group .input-group .input-group-addon.exclamation .fa {
+      cursor: pointer; }
+
 ul.progressBar {
   list-style-type: none; }
   ul.progressBar > li {
@@ -6908,3 +6928,10 @@ ol li {
   margin-bottom: 15px; }
   ol li > ol li {
     margin-bottom: 5px; }
+
+.popover {
+  background: #d9534f;
+  color: #fff;
+  font-size: 11px; }
+  .popover.left > .arrow::after {
+    border-left-color: #d9534f; }

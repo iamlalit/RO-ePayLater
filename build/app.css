@@ -6782,6 +6782,11 @@ button.close {
 .site-footer .navbar-default {
   margin-bottom: 0; }
 
+.hide {
+  display: none;
+  opacity: 0;
+  visibility: hidden; }
+
 .padding.top-0x {
   padding-top: 10px; }
 
@@ -6834,21 +6839,21 @@ h1 {
   font-size: 1.5em;
   margin: 0 0 20px; }
 
-.btn.btn-default {
-  color: #fff;
-  background-color: #9E9E9E; }
-  .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover {
-    color: #fff;
-    background-color: #9E9E9E; }
-
-.btn.btn-primary {
-  border-color: #3F79BD;
-  background-color: #3F79BD;
-  color: #fff;
+.btn {
   font-weight: 600;
   font-size: 1.1em;
   min-height: 42px;
   padding: 9px 20px; }
+  .btn.btn-default {
+    color: #333;
+    background-color: #fff; }
+    .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover {
+      color: #333;
+      background-color: #fff; }
+  .btn.btn-primary {
+    border-color: #3F79BD;
+    background-color: #3F79BD;
+    color: #fff; }
 
 .form-group label {
   display: block;
@@ -6874,6 +6879,29 @@ h1 {
   .form-group textarea.form-control:focus,
   .form-group select.form-control:focus {
     border-color: #3F79BD; }
+
+.form-group input.form-control.validation-error,
+.form-group textarea.form-control.validation-error {
+  border-color: #d9534f; }
+  .form-group input.form-control.validation-error:focus,
+  .form-group textarea.form-control.validation-error:focus {
+    border-color: #d9534f; }
+
+.form-group .input-group {
+  width: 100%; }
+  .form-group .input-group .input-group-addon.exclamation {
+    background: white;
+    border-left: 0;
+    color: #d9534f;
+    font-size: 22px;
+    padding: 0 5px;
+    position: absolute;
+    top: 10px;
+    border: 0;
+    z-index: 99;
+    right: 20px; }
+    .form-group .input-group .input-group-addon.exclamation .fa {
+      cursor: pointer; }
 
 ul.progressBar {
   list-style-type: none; }
@@ -6905,3 +6933,10 @@ ol li {
   margin-bottom: 15px; }
   ol li > ol li {
     margin-bottom: 5px; }
+
+.popover {
+  background: #d9534f;
+  color: #fff;
+  font-size: 11px; }
+  .popover.left > .arrow::after {
+    border-left-color: #d9534f; }

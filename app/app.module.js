@@ -8,6 +8,10 @@
 	angular.module('ro-app', [
 		//Third party dependencies
 		'ui.router',
+
+		//common directives
+		'core.module',
+
 		//Application specific
 		'mdnid.module',
 		'otp.module',
