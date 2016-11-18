@@ -1,0 +1,37 @@
+(function(){
+	'use strict'
+	angular.module('ro-app')
+		.config(appConfig);
+
+	appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
+
+	function appConfig($stateProvider, $urlRouterProvider, $httpProvider){
+		$stateProvider.
+			state('mdnid', {
+				url: '/',
+				templateUrl: 'mdnid/mdnid.html',
+    		controller: 'mdnidCntl',
+    		controllerAs: 'ro'
+			}).
+			state('otp', {
+				url: '/otp',
+				templateUrl: 'otp/otp.html',
+    		controller: 'otpCntl',
+    		controllerAs: 'ro'
+			}).
+			state('userdetails', {
+				url: '/userdetails',
+				templateUrl: 'userdetails/userdetails.html',
+    		controller: 'userCntl',
+    		controllerAs: 'ro'
+			}).
+			state('signedform', {
+				url: '/signedform',
+				templateUrl: 'uploadsignedform/uploadsignedform.html',
+    		controller: 'signedFormCntl',
+    		controllerAs: 'ro'
+			})
+
+			$urlRouterProvider.otherwise('/');
+	}
+})();

@@ -6747,14 +6747,40 @@ button.close {
 .fa-medium:before {
   content: ""; }
 
-.widget.widget-left {
-  border-left: 2px solid #ddd; }
-
 .well.well-ro {
-  margin: 20px;
+  margin: 0;
   background: #F7F6F6;
   border: 0;
   box-shadow: none; }
+
+.v-align.middle {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
+.row.table-row, .row-fluid.table-row {
+  display: table;
+  width: 100%; }
+  .row.table-row > div[class^="col-"], .row-fluid.table-row > div[class^="col-"] {
+    display: table-cell;
+    float: none; }
+    .row.table-row > div[class^="col-"].vertical-middle, .row-fluid.table-row > div[class^="col-"].vertical-middle {
+      vertical-align: middle; }
+    .row.table-row > div[class^="col-"].vertical-top, .row-fluid.table-row > div[class^="col-"].vertical-top {
+      vertical-align: top; }
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -51px; }
+  .page-wrap:after {
+    content: "";
+    display: block; }
+
+.site-footer, .page-wrap:after {
+  height: 51px; }
+
+.site-footer .navbar-default {
+  margin-bottom: 0; }
 
 .padding.top-0x {
   padding-top: 10px; }
@@ -6786,10 +6812,14 @@ button.close {
 .padding.bottom-4x {
   padding-bottom: 50px; }
 
+html, body {
+  height: 100%; }
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  color: #666666; }
   body.noScroll {
     overflow: hidden; }
 
@@ -6802,8 +6832,7 @@ body {
 
 h1 {
   font-size: 1.5em;
-  margin: 0 0 20px;
-  color: #666666; }
+  margin: 0 0 20px; }
 
 .btn.btn-default {
   color: #fff;
@@ -6845,3 +6874,34 @@ h1 {
   .form-group textarea.form-control:focus,
   .form-group select.form-control:focus {
     border-color: #3F79BD; }
+
+ul.progressBar {
+  list-style-type: none; }
+  ul.progressBar > li {
+    margin-bottom: 10px;
+    width: 100%;
+    display: inline-block; }
+    ul.progressBar > li span {
+      display: block;
+      float: left; }
+      ul.progressBar > li span.fa {
+        display: none;
+        padding: 0 10px 0 0;
+        font-size: 2.5em; }
+      ul.progressBar > li span:last-child {
+        padding-left: 42px; }
+    ul.progressBar > li.active {
+      color: #629c44;
+      font-weight: 600;
+      margin-bottom: 3px; }
+      ul.progressBar > li.active span.fa {
+        vertical-align: middle;
+        display: inline-block; }
+      ul.progressBar > li.active span:last-child {
+        padding-top: 9px;
+        padding-left: 0; }
+
+ol li {
+  margin-bottom: 15px; }
+  ol li > ol li {
+    margin-bottom: 5px; }
