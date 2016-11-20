@@ -125,8 +125,8 @@
                       <option>1990</option>
                     </select>
                   </div>
-                  <div class="col-sm-1 hidden-xs padding top-0x">
-                    <span class="exclamation error" data-ng-show="ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                  <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
+                    <span class="exclamation error" data-ng-show="(ro.userBasicDetails.dobYear == '0' || ro.userBasicDetails.dobMonth == '0' || ro.userBasicDetails.dobDay == '0') && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
                   </div>
                 </div>
                 <div class="error visible-xs" data-ng-show="(ro.userBasicDetails.dobYear == '0' || ro.userBasicDetails.dobMonth == '0' || ro.userBasicDetails.dobDay == '0') && buttonUserBasicDetailsFormClicked">
@@ -163,16 +163,16 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-6 col-xs-12">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.govtID" name="govtID" data-ng-init="ro.userBasicDetails.govtID = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked}">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.govtID" name="govtID" data-ng-init="ro.userBasicDetails.govtID = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select Govt ID type">
                       <option value="0">I have ...</option>
                       <option value="Aadhar Card">Aadhar Card</option>
                       <option value="Driver License">Driver's License</option>
                       <option value="Passport">Passport</option>
                       <option value="Voter ID">Voter ID</option>
                     </select>
-                    <div class="error" data-ng-show="ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked">
-                      <span>Please choose govt ID type</span>
-                    </div>
+                  </div>
+                  <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
+                    <span class="exclamation error" data-ng-show="ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
                   </div>
                 </div>
               </div>
@@ -198,9 +198,15 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <label>Voter ID</label>
-                    <input type="text" class="form-control" placeholder="Voter ID" name="voterID"  data-ng-model="ro.userBasicDetails.voterId" data-ng-class="{'validation-error': !userbasicdetails.voterID.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)}"/>
-                    <div class="error" data-ng-show="!userbasicdetails.voterID.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)">
-                      <span>Please enter voter ID.</span>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Voter ID" name="voterID" data-ng-required="ro.userBasicDetails.govtID == 'Voter ID'" data-ng-pattern="ro.voterIDRegex" data-ng-model="ro.userBasicDetails.voterId" data-ng-class="{'validation-error': !userbasicdetails.voterID.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.voterID.$error.required ? 'Please enter Voter ID': 'Enter correct Voter ID'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.voterID.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.voterID.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)">
+                        <span>Please enter Voter ID.</span>
+                      </div>
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.voterID.$error.required && !userbasicdetails.voterID.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.voterID.$pristine)">
+                        <span>Enter correct Voter ID.</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -209,7 +215,16 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <label>Driver License</label>
-                    <input type="text" class="form-control" placeholder="Driver License"  data-ng-model="ro.userBasicDetails.driverLicense"/>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Driver License"  data-ng-model="ro.userBasicDetails.driverLicense" name="driverLicense" data-ng-required="ro.userBasicDetails.govtID == 'Driver License'" data-ng-pattern="ro.driverLicenseRegex" data-ng-class="{'validation-error': !userbasicdetails.driverLicense.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.driverLicense.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.driverLicense.$error.required ? 'Please enter Driver License': 'Enter correct Driver License'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.driverLicense.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.driverLicense.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.driverLicense.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.driverLicense.$pristine)">
+                        <span>Please enter Driver License.</span>
+                      </div>
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.driverLicense.$error.required && !userbasicdetails.driverLicense.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.driverLicense.$pristine)">
+                        <span>Enter correct Driver License.</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="row padding top-0x">
@@ -218,15 +233,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-6">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.dl.month" data-ng-init="ro.userBasicDetails.dl.month = '0'">
+                  <div class="col-xs-5">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.dlMonth" data-ng-init="ro.userBasicDetails.dlMonth = '0'">
                       <option value="0">Month</option>
                       <option>1</option>
                       <option>2</option>
                     </select>
                   </div>
                   <div class="col-xs-6">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.dl.year" data-ng-init="ro.userBasicDetails.dl.year = '0'">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.dlYear" data-ng-init="ro.userBasicDetails.dlYear = '0'">
                       <option value="0">Year</option>
                       <option>2016</option>
                       <option>2017</option>
@@ -238,7 +253,16 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <label>Passport</label>
-                    <input type="text" class="form-control" placeholder="Passport" data-ng-model="ro.userBasicDetails.passsport"/>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Passport" data-ng-model="ro.userBasicDetails.driverLicense" name="passport" data-ng-required="ro.userBasicDetails.govtID == 'Passport'" data-ng-pattern="ro.passportRegex" data-ng-class="{'validation-error': !userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.passport.$error.required ? 'Please enter Passport': 'Enter correct Passport'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.passport.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)">
+                        <span>Please enter Passport.</span>
+                      </div>
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.passport.$error.required && !userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)">
+                        <span>Enter correct Passport.</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="row padding top-0x">
@@ -248,14 +272,14 @@
                 </div>
                 <div class="row">
                   <div class="col-xs-6">
-                    <select class="form-control"  data-ng-model="ro.userBasicDetails.passsport.month" data-ng-init="ro.userBasicDetails.passsport.month = '0'">
+                    <select class="form-control"  data-ng-model="ro.userBasicDetails.passsportMonth" data-ng-init="ro.userBasicDetails.passsportMonth = '0'">
                       <option value="0">Month</option>
                       <option>1</option>
                       <option>2</option>
                     </select>
                   </div>
                   <div class="col-xs-6">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.passsport.year" data-ng-init="ro.userBasicDetails.passsport.year = '0'">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.passsportYear" data-ng-init="ro.userBasicDetails.passsportYear = '0'">
                       <option value="0">Year</option>
                       <option>2016</option>
                       <option>2017</option>
