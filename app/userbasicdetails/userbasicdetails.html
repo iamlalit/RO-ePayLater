@@ -24,9 +24,9 @@
                 <div class="row">
                   <div class="col-sm-6 col-xs-12">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="First" name="firstname" required data-ng-model="ro.userBasicDetails.firstname" data-ng-class="{'validation-error': userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)}"/>
-                      <span class="input-group-addon exclamation" data-ng-show="userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)"><i class="fa fa-exclamation-circle"></i></span>
-                      <div class="error" data-ng-show="userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)">
+                      <input type="text" class="form-control" placeholder="First" name="firstname" required data-ng-model="ro.userBasicDetails.firstname" data-ng-class="{'validation-error': userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter first name"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.firstname.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.firstname.$pristine)">
                         <span>Please enter first name.</span>
                       </div>
                     </div>
@@ -46,12 +46,12 @@
                   <div class="col-xs-12">
                     <label>E-mail Address</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="E-mail Address" data-ng-pattern="ro.emailregex" data-ng-model="ro.userBasicDetails.email" name="email" required data-ng-class="{'validation-error': !userbasicdetails.email.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)}"/>
-                      <span class="input-group-addon exclamation" data-ng-show="!userbasicdetails.email.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)"><i class="fa fa-exclamation-circle"></i></span>
-                      <div class="error" data-ng-show="userbasicdetails.email.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)">
+                      <input type="text" class="form-control" placeholder="E-mail Address" data-ng-pattern="ro.emailregex" data-ng-model="ro.userBasicDetails.email" name="email" required data-ng-class="{'validation-error': !userbasicdetails.email.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{mdnidForm.phoneNumber.$error.required ? 'Please enter email': 'Enter correct email'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.email.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.email.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)">
                         <span>Please enter email.</span>
                       </div>
-                      <div class="error" data-ng-show="!userbasicdetails.email.$valid && !userbasicdetails.email.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)">
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.email.$valid && !userbasicdetails.email.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.email.$pristine)">
                         <span>Please enter valid email.</span>
                       </div>
                     </div>
@@ -62,33 +62,39 @@
                 <div class="row">
                   <div class="col-sm-6 col-xs-12">
                     <label>Gender</label>
-                    <select class="form-control" name="gender" required data-ng-model="ro.userBasicDetails.gender" data-ng-init="ro.userBasicDetails.gender = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.gender == '0' && buttonUserBasicDetailsFormClicked}">
+                    <select class="form-control" name="gender" required data-ng-model="ro.userBasicDetails.gender" data-ng-init="ro.userBasicDetails.gender = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.gender == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select gender">
                       <option value="0">I am ...</option>
                       <option>Male</option>
                       <option>Female</option>
                       <option>Trans</option>
                       <option>Do not wish to specify</option>
                     </select>
-                    <div class="error" data-ng-show="ro.userBasicDetails.gender == '0' && buttonUserBasicDetailsFormClicked">
-                      <span>Please select gender.</span>
-                    </div>
                   </div>
+                  <div class="col-sm-1 hidden-xs padding top-2x">
+                    <span class="exclamation error" data-ng-show="ro.userBasicDetails.gender == '0' && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                  </div>
+                </div>
+                <div class="error visible-xs" data-ng-show="ro.userBasicDetails.gender == '0' && buttonUserBasicDetailsFormClicked">
+                  <span>Please select gender.</span>
                 </div>
               </div>
               <div class="form-group">
                 <div class="row">
-                  <div class="col-xs-6">
+                  <div class="col-xs-12 col-sm-6">
                     <label>Education</label>
-                    <select class="form-control" required data-ng-model="ro.userBasicDetails.education" data-ng-init="ro.userBasicDetails.education = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked}">
+                    <select class="form-control" required data-ng-model="ro.userBasicDetails.education" data-ng-init="ro.userBasicDetails.education = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select education">
                       <option value="0">I am ...</option>
                       <option>High school pass out</option>
                       <option>Graduate</option>
                       <option>Post graduate</option>
                     </select>
-                    <div class="error" data-ng-show="ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked">
-                      <span>Please select education.</span>
-                    </div>
                   </div>
+                  <div class="col-sm-1 hidden-xs padding top-2x">
+                    <span class="exclamation error" data-ng-show="ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                  </div>
+                </div>
+                <div class="error visible-xs" data-ng-show="ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked">
+                  <span>Please select education.</span>
                 </div>
               </div>
               <div class="form-group">
@@ -98,46 +104,56 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.dobDay" data-ng-init="ro.userBasicDetails.dobDay = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.dobDay == '0' && buttonUserBasicDetailsFormClicked}">
+                  <div class="col-xs-4 col-sm-3">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.dobDay" data-ng-init="ro.userBasicDetails.dobDay = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.dobDay == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select date of birth">
                       <option value="0">Day</option>
                       <option>1</option>
                       <option>2</option>
                     </select>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-xs-4 col-sm-4">
                     <select class="form-control" data-ng-model="ro.userBasicDetails.dobMonth" data-ng-init="ro.userBasicDetails.dobMonth = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.dobMonth == '0' && buttonUserBasicDetailsFormClicked}">
                       <option value="0">Month</option>
                       <option>1</option>
                       <option>2</option>
                     </select>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-xs-4 col-sm-4">
                     <select class="form-control" data-ng-model="ro.userBasicDetails.dobYear" data-ng-init="ro.userBasicDetails.dobYear = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.dobYear == '0' && buttonUserBasicDetailsFormClicked}">
                       <option value="0">Year</option>
                       <option>1989</option>
                       <option>1990</option>
                     </select>
                   </div>
+                  <div class="col-sm-1 hidden-xs padding top-0x">
+                    <span class="exclamation error" data-ng-show="ro.userBasicDetails.education == '0' && buttonUserBasicDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                  </div>
                 </div>
-                <div class="error" data-ng-show="(ro.userBasicDetails.dobYear == '0' || ro.userBasicDetails.dobMonth == '0' || ro.userBasicDetails.dobDay == '0') && buttonUserBasicDetailsFormClicked">
-                  <span>Please select correct date.</span>
+                <div class="error visible-xs" data-ng-show="(ro.userBasicDetails.dobYear == '0' || ro.userBasicDetails.dobMonth == '0' || ro.userBasicDetails.dobDay == '0') && buttonUserBasicDetailsFormClicked">
+                  <span>Please select date of birth.</span>
                 </div>
               </div>
               <div class="form-group" data-ng-show="!ro.userBasicDetails.noPanCard" data-ng-init="ro.userBasicDetails.noPanCard = false;">
                 <div class="row">
                   <div class="col-xs-12 col-sm-6">
                     <label>PAN No.</label>
-                    <input type="text" class="form-control" placeholder="PAN No." name="panno" data-ng-required="!ro.userBasicDetails.noPanCard" data-ng-model="ro.userBasicDetails.panNo" data-ng-class="{'validation-error': !userbasicdetails.panno.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)}"/>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="PAN No." name="panno" data-ng-pattern="ro.panNumberRegex" data-ng-required="!ro.userBasicDetails.noPanCard" data-ng-model="ro.userBasicDetails.panNo" data-ng-class="{'validation-error': !userbasicdetails.panno.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.panno.$error.required ? 'Please enter PAN No.': 'Enter correct PAN No.'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.panno.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.panno.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)">
+                        <span>Please enter PAN No.</span>
+                      </div>
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.panno.$error.required && !userbasicdetails.panno.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)">
+                        <span>Enter correct PAN No.</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-xs-12 col-sm-6 padding top-0x">
                     <label>&nbsp;</label>
                     <a href="javascript:void(0)" data-ng-click="ro.userBasicDetails.noPanCard = true">I dont't have PAN No.</a>
                   </div>
                 </div>
-                <div class="error" data-ng-show="!userbasicdetails.panno.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.panno.$pristine)">
-                  <span>Please enter pan no.</span>
-                </div>
+
               </div>
               <div class="form-group" data-ng-show="ro.userBasicDetails.noPanCard">
                 <div class="row">
@@ -164,9 +180,15 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <label>Aadhar Card</label>
-                    <input type="text" class="form-control" placeholder="Aadhar Card" name="aadharcard" data-ng-model="ro.userBasicDetails.aadharCard" data-ng-class="{'validation-error': !userbasicdetails.aadharcard.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)}" />
-                    <div class="error" data-ng-show="!userbasicdetails.aadharcard.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)">
-                      <span>Please enter aadhard card.</span>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Aadhar Card" name="aadharcard" data-ng-required="ro.userBasicDetails.govtID == 'Aadhar Card'" data-ng-pattern="ro.aadharRegex" data-ng-model="ro.userBasicDetails.aadharCard" data-ng-class="{'validation-error': !userbasicdetails.aadharcard.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.aadharcard.$error.required ? 'Please enter Aadhar Card': 'Enter correct Aadhar Card'}}"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.aadharcard.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userbasicdetails.aadharcard.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)">
+                        <span>Please enter Aadhar Card.</span>
+                      </div>
+                      <div class="error visible-xs" data-ng-show="!userbasicdetails.aadharcard.$error.required && !userbasicdetails.aadharcard.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.aadharcard.$pristine)">
+                        <span>Enter correct Aadhar Card.</span>
+                      </div>
                     </div>
                   </div>
                 </div>

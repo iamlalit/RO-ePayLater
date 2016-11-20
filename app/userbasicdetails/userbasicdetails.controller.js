@@ -11,6 +11,8 @@
 		vm.returnPartial = returnPartial;
 		vm.submitUserBasicDetailsForm = submitUserBasicDetailsForm;
 		vm.emailregex = new RegExp('.+@.+\\..+');
+		vm.panNumberRegex = new RegExp('[A-Z]{5}[0-9]{4}[A-Z]{1}');
+		vm.aadharRegex = new RegExp('[0-9]{4} [0-9]{4} [0-9]{4}');
 		vm.userBasicDetails = [];
 		activate();
 

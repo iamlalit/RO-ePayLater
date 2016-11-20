@@ -25,6 +25,11 @@
     	}
     }
   }
+	select{
+		&.form-control{
+	    padding: 9px 4px;
+		}
+	}
 
 	.input-group{
 		span{
