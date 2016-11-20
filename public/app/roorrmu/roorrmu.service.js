@@ -3,10 +3,39 @@
 	angular.module('roorrmu.module')
 	.service('roorrmuService', roorrmuService);
 
-	roorrmuService.$inject = [];
+	roorrmuService.$inject = ['$http', '$q'];
 
-	function roorrmuService(){
+	function roorrmuService($http, $q){
+		var service;
 
+		service = {
+      postUserType: postUserType
+    };
+
+		return service;
+
+		function postUserType(userType) {
+        var deferred = $q.defer();
+
+				//in url please enter url of the api
+				//mehtod could be get,post, delete and others standard http requet method
+				//params will consist of the list of parameter(comma separated) that need to be passed in API call
+        $http({
+            url : 'url',
+            method: "POST",
+            params: {
+							userType: userType
+						}
+        })
+        .success(function (data) {
+            deferred.resolve(data);
+        })
+        .error(function () {
+            deferred.reject("Failed to post data");
+        });
+
+        return deferred.promise;
+    }
 	}
 
 })(window);
