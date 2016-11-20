@@ -14,28 +14,38 @@
       <div class="row">
   <div class="col-xs-12">
     <div class="well well-ro">
-      <form novalidate="true" data-ng-submit="ro.submitUserLoanDetailsForm(userLoanDetails.$valid)" name="userLoanDetails">
+      <form novalidate="true" data-ng-submit="ro.submitUserLoanDetailsForm(userloandetails.$valid)" name="userloandetails" data-ng-init="buttonUserLoanDetailsFormClicked = false;">
         <div class="form-group">
           <div class="row">
             <div class="col-xs-12">
               <label>Loan Amount (in Rs.)</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-inr" aria-hidden="true"></i></span>
-                <input type="text" class="form-control left" placeholder="Loan Amount (in Rs.)" data-ng-model="ro.userLoanDetails.loanAmt">
+                <input type="text" class="form-control left" placeholder="Loan Amount (in Rs.)" required name="loanamt" data-ng-model="ro.userLoanDetails.loanAmt" data-ng-class="{'validation-error': userloandetails.loanamt.$error.required && (buttonUserLoanDetailsFormClicked || !userloandetails.loanamt.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Loan Amount">
+                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userloandetails.loanamt.$error.required && (buttonUserLoanDetailsFormClicked || !userloandetails.loanamt.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                <div class="error visible-xs" data-ng-show="userloandetails.loanamt.$error.required && (buttonUserLoanDetailsFormClicked || !userloandetails.loanamt.$pristine)">
+                  <span>Please enter Loan Amount.</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="form-group">
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-12 col-sm-6">
               <label>Tenor in Days</label>
-              <select class="form-control" data-ng-model="ro.userLoanDetails.tenor">
+              <select class="form-control" data-ng-model="ro.userLoanDetails.tenor" name="tenor" data-ng-init="ro.userLoanDetails.tenor = '0'" data-ng-class="{'validation-error': ro.userLoanDetails.tenor == '0' && buttonUserLoanDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select tenor">
                 <option value="0">Select days</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
               </select>
+            </div>
+            <div class="col-sm-1 hidden-xs padding top-2x">
+              <span class="exclamation error" data-ng-show="ro.userLoanDetails.tenor == '0' && buttonUserLoanDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+            </div>
+            <div class="error visible-xs" data-ng-show="ro.userLoanDetails.tenor == '0' && buttonUserLoanDetailsFormClicked">
+              <span>Please select tenor.</span>
             </div>
           </div>
         </div>
@@ -44,7 +54,7 @@
             <div class="col-xs-12">
               <label>Upload ID Proof (PAN, or Passport, or Voter ID)</label>
               <input type="file" id="idProof" class="hide" data-ng-model="ro.userloandetails.idProof"/>
-              <button class="btn btn-default" >Upload ID Proof</button>
+              <button type="button" class="btn btn-default" >Upload ID Proof</button>
             </div>
           </div>
         </div>
@@ -53,7 +63,7 @@
             <div class="col-xs-12">
               <label>Upload Address Proof (Aadhaar Card, or Passport)</label>
               <input type="file" class="hide" data-ng-model="ro.userloaddetails.addressProof"/>
-              <button class="btn btn-default" >Upload Address Proof</button> {{ro.userloaddetails.addressProof}}
+              <button type="button" class="btn btn-default" >Upload Address Proof</button> {{ro.userloaddetails.addressProof}}
             </div>
           </div>
         </div>
@@ -62,7 +72,7 @@
             <div class="col-xs-12">
               <label>Upload Photo</label>
               <input type="file" class="hide" data-ng-model="ro.userloaddetails.uploadPhoto"/>
-              <button class="btn btn-default" >Upload Photo</button>
+              <button type="button" class="btn btn-default" >Upload Photo</button>
             </div>
           </div>
         </div>
@@ -71,12 +81,12 @@
             <div class="col-xs-12">
               <label>Bank statement (last six months)</label>
               <input type="file" class="hide" data-ng-model="ro.userloaddetails.bankStatement"/>
-              <button class="btn btn-default" >Bank Statement</button>
+              <button type="button" class="btn btn-default" >Bank Statement</button>
             </div>
           </div>
         </div>
         <div class="form-group padding top-1x">
-          <a type="submit" class="btn btn-primary" href="javascript:void(0)" ui-sref="userdownloadform">Continue</a>
+          <button type="submit" class="btn btn-primary" data-ng-click="buttonUserLoanDetailsFormClicked = true">Continue</button>
         </div>
       </form>
     </div>
