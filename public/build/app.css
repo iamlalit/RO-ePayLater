@@ -6880,6 +6880,19 @@ h1 {
   .form-group select.form-control:focus {
     border-color: #3F79BD; }
 
+.form-group .input-group span.input-group-addon:first-child {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 99;
+  width: 50px;
+  height: 38px;
+  padding: 12px 12px 11px;
+  border: 0; }
+
+.form-group .input-group .form-control.left {
+  padding-left: 55px; }
+
 .form-group input.form-control.validation-error,
 .form-group textarea.form-control.validation-error,
 .form-group select.form-control.validation-error {

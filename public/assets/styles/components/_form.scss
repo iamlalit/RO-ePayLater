@@ -25,4 +25,26 @@
     	}
     }
   }
+
+	.input-group{
+		span{
+			&.input-group-addon{
+				&:first-child{
+					position: absolute;
+			    top: 2px;
+			    left: 2px;
+			    z-index: 99;
+			    width: 50px;
+			    height: 38px;
+			    padding: 12px 12px 11px;
+					border: 0;
+				}
+			}
+		}
+		.form-control{
+			&.left{
+				padding-left: 55px;
+			}
+		}
+	}
 }
