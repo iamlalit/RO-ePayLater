@@ -1,6 +1,7 @@
 .form-group{
   input,
-  textarea{
+  textarea,
+  select{
     &.form-control{
         &.validation-error{
           &:focus{
@@ -9,6 +10,9 @@
           border-color: #d9534f;
         }
     }
+  }
+  .error{
+    color: #d9534f;
   }
   .input-group{
     width: 100%;

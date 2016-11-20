@@ -10,6 +10,7 @@
 
 		vm.returnPartial = returnPartial;
 		vm.submitUserBasicDetailsForm = submitUserBasicDetailsForm;
+		vm.emailregex = new RegExp('.+@.+\\..+');
 		vm.userBasicDetails = [];
 		activate();
 

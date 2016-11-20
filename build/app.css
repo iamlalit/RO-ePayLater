@@ -6881,11 +6881,16 @@ h1 {
     border-color: #3F79BD; }
 
 .form-group input.form-control.validation-error,
-.form-group textarea.form-control.validation-error {
+.form-group textarea.form-control.validation-error,
+.form-group select.form-control.validation-error {
   border-color: #d9534f; }
   .form-group input.form-control.validation-error:focus,
-  .form-group textarea.form-control.validation-error:focus {
+  .form-group textarea.form-control.validation-error:focus,
+  .form-group select.form-control.validation-error:focus {
     border-color: #d9534f; }
+
+.form-group .error {
+  color: #d9534f; }
 
 .form-group .input-group {
   width: 100%; }
