@@ -33,6 +33,10 @@ ul{
           }
         }
       }
+      &.bold{
+        color: $black;
+        font-weight: 700;
+      }
     }
   }
 }

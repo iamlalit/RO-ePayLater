@@ -35,8 +35,6 @@
             input.popover('hide');
           }
         }
-
-
 			}
 		}
 })();

@@ -1,7 +1,20 @@
-<div class="row">
+<div class="row table-row">
+  <div class="col-sm-6 vertical-middle hidden-xs">
+    <ul class="progressBar" progress-state>
+      <li class="active"><span class="fa fa-check-circle"></span><span>RO / RMU Details</span></li>
+      <li class="active"><span class="fa fa-check-circle"></span><span>Promoter / Proprietor Information</span></li>
+      <li class="bold"><span class="fa fa-check-circle"></span><span>Business Details</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Loan section</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Download Forms</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Upload Signed Form</span></li>
+    </ul>
+  </div>
+  <div class="col-sm-6 vertical-top col-xs-12">
+    <div class="widget widget-left">
+      <div class="row">
   <div class="col-xs-12">
     <div class="well well-ro">
-      <form>
+      <form data-ng-submit="ro.submitUserAddressDetails(useraddressdetails.$valid)" novalidate="true" name="useraddressdetails">
         <div class="form-group">
           <div class="row">
             <div class="col-xs-12">
@@ -86,6 +99,9 @@
           <a type="submit" class="btn btn-primary" href="javascript:void(0)" ui-sref='userloandetails'>Continue</a>
         </div>
       </form>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>

@@ -1,7 +1,20 @@
-<div class="row">
+<div class="row table-row">
+  <div class="col-sm-6 vertical-middle hidden-xs">
+    <ul class="progressBar" progress-state>
+      <li class="active"><span class="fa fa-check-circle"></span><span>RO / RMU Details</span></li>
+      <li class="bold"><span class="fa fa-check-circle"></span><span>Promoter / Proprietor Information</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Business Details</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Loan section</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Download Forms</span></li>
+      <li><span class="fa fa-check-circle"></span><span>Upload Signed Form</span></li>
+    </ul>
+  </div>
+  <div class="col-sm-6 vertical-top col-xs-12">
+    <div class="widget widget-left">
+      <div class="row">
   <div class="col-xs-12">
     <div class="well well-ro">
-      <form>
+      <form novalidate="true" data-ng-submit="ro.submitUserBasicDetailsForm(userbasicdetails.$valid)" name="userbasicdetails">
         <div class="form-group">
           <div class="row">
             <div class="col-xs-12">
@@ -10,15 +23,15 @@
           </div>
           <div class="row">
             <div class="col-sm-6 col-xs-12">
-              <input type="text" class="form-control" placeholder="First" />
+              <input type="text" class="form-control" placeholder="First" data-ng-model="ro.userBasicDetails.firstname"/>
             </div>
             <div class="col-sm-6 col-xs-12">
-              <input type="text" class="form-control" placeholder="Middle" />
+              <input type="text" class="form-control" placeholder="Middle" data-ng-model="ro.userBasicDetails.middle"/>
             </div>
           </div>
           <div class="row padding top-0x">
             <div class="col-sm-6 col-xs-12">
-              <input type="text" class="form-control" placeholder="Last" />
+              <input type="text" class="form-control" placeholder="Last" data-ng-model="ro.userBasicDetails.last"/>
             </div>
           </div>
         </div>
@@ -26,7 +39,7 @@
           <div class="row">
             <div class="col-xs-12">
               <label>E-mail Address</label>
-              <input type="text" class="form-control" placeholder="E-mail Address" />
+              <input type="text" class="form-control" placeholder="E-mail Address" data-ng-model="ro.userBasicDetails.email"/>
             </div>
           </div>
         </div>
@@ -34,7 +47,7 @@
           <div class="row">
             <div class="col-xs-6">
               <label>Gender</label>
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.gender" data-ng-init="ro.userBasicDetails.gender = '0'">
                 <option value="0">I am ...</option>
                 <option>Male</option>
                 <option>Female</option>
@@ -48,7 +61,7 @@
           <div class="row">
             <div class="col-xs-6">
               <label>Education</label>
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.education" data-ng-init="ro.userBasicDetails.education = '0'">
                 <option value="0">I am ...</option>
                 <option>High school pass out</option>
                 <option>Graduate</option>
@@ -65,21 +78,21 @@
           </div>
           <div class="row">
             <div class="col-xs-4">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.dob.day" data-ng-init="ro.userBasicDetails.dob.day = '0'">
                 <option value="0">Day</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-4">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.dob.month" data-ng-init="ro.userBasicDetails.dob.month = '0'">
                 <option value="0">Month</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-4">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.dob.year" data-ng-init="ro.userBasicDetails.dob.year = '0'">
                 <option value="0">Year</option>
                 <option>1989</option>
                 <option>1990</option>
@@ -87,19 +100,19 @@
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="!ro.noPanCard" data-ng-init="ro.noPanCard = false;">
+        <div class="form-group" data-ng-show="!ro.userBasicDetails.noPanCard" data-ng-init="ro.userBasicDetails.noPanCard = false;">
           <div class="row">
             <div class="col-xs-6">
               <label>PAN No.</label>
-              <input type="text" class="form-control" placeholder="PAN No." />
+              <input type="text" class="form-control" placeholder="PAN No." data-ng-model="ro.userBasicDetails.panNo"/>
             </div>
             <div class="col-xs-6 padding top-0x">
               <label>&nbsp;</label>
-              <a href="javascript:void(0)" data-ng-click="ro.noPanCard = true">I dont't have PAN No.</a>
+              <a href="javascript:void(0)" data-ng-click="ro.userBasicDetails.noPanCard = true">I dont't have PAN No.</a>
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.noPanCard">
+        <div class="form-group" data-ng-show="ro.userBasicDetails.noPanCard">
           <div class="row">
             <div class="col-xs-12">
               <label>Govt ID Type</label>
@@ -107,7 +120,7 @@
           </div>
           <div class="row">
             <div class="col-sm-6 col-xs-12">
-              <select class="form-control" data-ng-model="ro.basicDetails.govtID" data-ng-init="ro.basicDetails.govtID = '0'">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.govtID" data-ng-init="ro.userBasicDetails.govtID = '0'">
                 <option value="0">I have ...</option>
                 <option value="Aadhar Card">Aadhar Card</option>
                 <option value="Driver License">Driver's License</option>
@@ -117,27 +130,27 @@
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.basicDetails.govtID == 'Aadhar Card'">
+        <div class="form-group" data-ng-show="ro.userBasicDetails.govtID == 'Aadhar Card'">
           <div class="row">
             <div class="col-xs-12">
               <label>Aadhar Card</label>
-              <input type="text" class="form-control" placeholder="Aadhar Card" />
+              <input type="text" class="form-control" placeholder="Aadhar Card" data-ng-model="ro.userBasicDetails.aadharCard" />
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.basicDetails.govtID == 'Voter ID'">
+        <div class="form-group" data-ng-show="ro.userbasicdetails.govtID == 'Voter ID'">
           <div class="row">
             <div class="col-xs-12">
               <label>Voter ID</label>
-              <input type="text" class="form-control" placeholder="Voter ID" />
+              <input type="text" class="form-control" placeholder="Voter ID"   data-ng-model="ro.userBasicDetails.voterId"/>
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.basicDetails.govtID == 'Driver License'">
+        <div class="form-group" data-ng-show="ro.userbasicdetails.govtID == 'Driver License'">
           <div class="row">
             <div class="col-xs-12">
               <label>Driver License</label>
-              <input type="text" class="form-control" placeholder="Driver License" />
+              <input type="text" class="form-control" placeholder="Driver License"  data-ng-model="ro.userBasicDetails.driverLicense"/>
             </div>
           </div>
           <div class="row padding top-0x">
@@ -147,14 +160,14 @@
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.dl.month">
                 <option value="0">Month</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-6">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.dl.year">
                 <option value="0">Year</option>
                 <option>2016</option>
                 <option>2017</option>
@@ -162,11 +175,11 @@
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.basicDetails.govtID == 'Passport'">
+        <div class="form-group" data-ng-show="ro.userbasicdetails.govtID == 'Passport'">
           <div class="row">
             <div class="col-xs-12">
               <label>Passport</label>
-              <input type="text" class="form-control" placeholder="Passport" />
+              <input type="text" class="form-control" placeholder="Passport" data-ng-model="ro.userBasicDetails.passsport"/>
             </div>
           </div>
           <div class="row padding top-0x">
@@ -176,14 +189,14 @@
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <select class="form-control">
+              <select class="form-control"  data-ng-model="ro.userBasicDetails.passsport.month">
                 <option value="0">Month</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-6">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userBasicDetails.passsport.year">
                 <option value="0">Year</option>
                 <option>2016</option>
                 <option>2017</option>
@@ -192,9 +205,12 @@
           </div>
         </div>
         <div class="form-group padding top-1x">
-          <a type="submit" class="btn btn-primary" ui-sref="useraddressdetails">Continue</a>
+          <button type="submit" class="btn btn-primary">Continue</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>

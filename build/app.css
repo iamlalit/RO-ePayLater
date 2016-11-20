@@ -6928,6 +6928,9 @@ ul.progressBar {
       ul.progressBar > li.active span:last-child {
         padding-top: 9px;
         padding-left: 0; }
+    ul.progressBar > li.bold {
+      color: #000;
+      font-weight: 700; }
 
 ol li {
   margin-bottom: 15px; }

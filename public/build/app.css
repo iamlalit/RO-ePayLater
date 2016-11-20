@@ -6782,6 +6782,11 @@ button.close {
 .site-footer .navbar-default {
   margin-bottom: 0; }
 
+.hide {
+  display: none;
+  opacity: 0;
+  visibility: hidden; }
+
 .padding.top-0x {
   padding-top: 10px; }
 
@@ -6834,21 +6839,21 @@ h1 {
   font-size: 1.5em;
   margin: 0 0 20px; }
 
-.btn.btn-default {
-  color: #fff;
-  background-color: #9E9E9E; }
-  .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover {
-    color: #fff;
-    background-color: #9E9E9E; }
-
-.btn.btn-primary {
-  border-color: #3F79BD;
-  background-color: #3F79BD;
-  color: #fff;
+.btn {
   font-weight: 600;
   font-size: 1.1em;
   min-height: 42px;
   padding: 9px 20px; }
+  .btn.btn-default {
+    color: #333;
+    background-color: #fff; }
+    .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover {
+      color: #333;
+      background-color: #fff; }
+  .btn.btn-primary {
+    border-color: #3F79BD;
+    background-color: #3F79BD;
+    color: #fff; }
 
 .form-group label {
   display: block;
