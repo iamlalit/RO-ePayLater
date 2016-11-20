@@ -6,10 +6,15 @@
 	userloandetailsService.$inject = ['$http', '$q'];
 
 	function userloandetailsService($http, $q){
-		var service;
+		var service,
+				idProofs = [{id: 'idProof1', 'value': '', 'fakeValue': ''}],
+				addressProofs = [{id: 'addressProof1', 'value': '', 'fakeValue': ''}];
 
 		service = {
-			saveUserLoanDetails: saveUserLoanDetails
+			saveUserLoanDetails: saveUserLoanDetails,
+			addMoreItems: addMoreItems,
+			idProofs: idProofs,
+			addressProofs: addressProofs
 		};
 
 		return service;
@@ -35,6 +40,11 @@
 				});
 
 				return deferred.promise;
+		}
+
+		function addMoreItems(obj, textString){
+			var newItemNo = obj.length+1;
+			obj.push({'id':textString+newItemNo, 'value': ''});
 		}
 	}
 

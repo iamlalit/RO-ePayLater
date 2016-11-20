@@ -21,21 +21,26 @@
 			function linkFunction(scope, element, attrs){
 				var _element = element,
             input = _element.closest('.input-group').find('input'),
-						select = _element.closest('.row').find('select');
+						select = _element.closest('.row').find('select'),
+						textarea = _element.closest('.row').find('textarea');
 
 				_element.on('click', popoverHandler);
 
 				function popoverHandler(event){
           input.popover('show');
 					select.popover('show');
+					textarea.popover('show');
 				}
 
         input.on('keydown', hidePopover);
+        textarea.on('keydown', hidePopover);
 				select.on('focus', hidePopover);
 
         function hidePopover(event){
           if(input.hasClass('validation-error')){
             input.popover('hide');
+          }else if(textarea.hasClass('validation-error')){
+          	textarea.popover('hide');
           }
 					select.popover('destroy');
         }
