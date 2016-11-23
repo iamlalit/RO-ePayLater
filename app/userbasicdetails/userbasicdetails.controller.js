@@ -16,7 +16,7 @@
 		vm.voterIDRegex = new RegExp('[A-Z]{3}[0-9]{7}$');
 		vm.driverLicenseRegex = new RegExp('^[0-9a-zA-Z]{4,9}$');
 		vm.passportRegex = new RegExp('[A-PR-WYa-pr-wy][1-9][0-9]\\s?[0-9]{4}[1-9]$');
-		vm.userBasicDetails = [];
+		vm.userBasicDetails = userbasicdetailsService.userBasicDetailsObject;
 		activate();
 
 		///////////////////////////
