@@ -10,6 +10,7 @@
 
 		vm.returnPartial = returnPartial;
 		vm.submitUserAddressDetails = submitUserAddressDetails;
+		vm.userAddressDetailsObject = useraddressdetailsService.userAddressDetailsObject;
 		activate();
 
 		///////////////////////////

@@ -6,10 +6,33 @@
 	userbasicdetailsService.$inject = ['$http', '$q'];
 
 	function userbasicdetailsService($http, $q){
-		var service;
+		var service,
+			userBasicDetailsObject = {
+				"firstname": "",
+				"middle": "",
+				"last": "",
+				"email": "",
+				"gender": "0",
+				"education": "0",
+				"dobDay": "0",
+				"dobMonth": "0",
+				"dobYear": "0",
+				"noPanCard": true,
+				"panNo": "",
+				"govtID": 0,
+				"aadharCard": "",
+				"driverLicense": "",
+				"dlMonth": "0",
+				"dlYear": "0",
+				"passport": "",
+				"passsportMonth": "0",
+				"passportYear": "0",
+				"voterId": ""
+			};
 
 		service = {
-      saveUserBasicDetails: saveUserBasicDetails
+      saveUserBasicDetails: saveUserBasicDetails,
+			userBasicDetailsObject: userBasicDetailsObject
     };
 
 		return service;

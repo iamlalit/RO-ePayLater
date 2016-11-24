@@ -21,6 +21,7 @@
 		'userloandetails.module',
 		'userdownloadform.module',
 		'signedForm.module',
-		'thankyou.module'
+		'thankyou.module',
+		'loanrenewalform.module'
 	]);
 })();

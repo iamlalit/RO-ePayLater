@@ -1,5 +1,5 @@
 <div class="row table-row">
-  <div class="col-sm-6 vertical-middle hidden-xs">
+  <div class="col-sm-6 vertical-top hidden-xs">
     <ul class="progressBar" progress-state>
       <li class="active"><span class="fa fa-check-circle"></span><span>RO / RMU Details</span></li>
       <li class="active"><span class="fa fa-check-circle"></span><span>Promoter / Proprietor Information</span></li>
@@ -31,8 +31,16 @@
           </div>
         </div>
         <div class="form-group padding top-1x bottom-4x">
-          <a href="javascript:void(0)" class="btn btn-primary" ui-sref="signedform">Continue</a>
+          <div class="row table-row">
+            <div class="col-sm-3 vertical-top">
+                <a href="javascript:void(0)" class="btn btn-primary" ui-sref="signedform">Continue</a>
+            </div>
+            <div class="col-sm-9 vertical-middle">
+              <a href="javascript:void(0)">Logout and continue later</a>
+            </div>
+          </div>
         </div>
+
       </form>
     </div>
   </div>
