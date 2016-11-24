@@ -71,7 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="!ro.userAddressDetails.noPanCard">
+        <div class="form-group" data-ng-if="!ro.userAddressDetails.noPanCard">
           <div class="row">
             <div class="col-xs-6">
               <label>Business PAN No</label>
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="form-group" data-ng-show="ro.userAddressDetails.noPanCard">
+        <div class="form-group" data-ng-if="ro.userAddressDetails.noPanCard">
           <div class="row">
             <div class="col-xs-6">
               <label>Shop &amp; Establishment No.</label>

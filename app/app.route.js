@@ -60,6 +60,12 @@
 				templateUrl: 'thankyou/thankyou.html',
     		controller: 'thankyouCntl',
     		controllerAs: 'ro'
+			}).
+			state('loanrenewal', {
+				url: '/loanrenewal',
+				templateUrl: 'loanrenewalform/loanrenewalform.html',
+    		controller: 'loanrenewalformCntl',
+    		controllerAs: 'ro'
 			})
 
 			$urlRouterProvider.otherwise('/');

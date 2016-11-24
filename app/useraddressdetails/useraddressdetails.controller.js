@@ -42,7 +42,5 @@
 		function errorUserDetails(error){
 			console.log(error);
 		}
-
-
 	}
 })();
