@@ -13,6 +13,8 @@
 				"city": "",
 				"pincode": "",
 				"businesspan": "",
+				"noPanCard": false,
+				"shopEstablishment": "",
 				"doIDay": "0",
 				"doIMonth": "0",
 				"doIYear": "0"
