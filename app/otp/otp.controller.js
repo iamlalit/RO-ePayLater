@@ -18,6 +18,7 @@
 		}
 
 		function submitOtpForm(isValid){
+			debugger;
 			if(isValid){
 				//this API will call when user passed out of form validations
 				//this API function(getAuthenticatedUser) is written inside the services
