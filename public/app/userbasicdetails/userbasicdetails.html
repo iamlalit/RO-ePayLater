@@ -1,5 +1,5 @@
 <div class="row table-row">
-  <div class="col-sm-6 vertical-middle hidden-xs">
+  <div class="col-sm-6 vertical-top hidden-xs">
     <ul class="progressBar" progress-state>
       <li class="active"><span class="fa fa-check-circle"></span><span>RO / RMU Details</span></li>
       <li class="bold"><span class="fa fa-check-circle"></span><span>Promoter / Proprietor Information</span></li>
@@ -163,12 +163,13 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-6 col-xs-12">
-                    <select class="form-control" data-ng-model="ro.userBasicDetails.govtID" name="govtID" data-ng-init="ro.userBasicDetails.govtID = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select Govt ID type">
+                    <select class="form-control" data-ng-model="ro.userBasicDetails.govtID" name="govtID" data-ng-init="ro.userBasicDetails.govtID = '0'" data-ng-class="{'validation-error': ro.userBasicDetails.govtID == '0' && buttonUserBasicDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select Govt ID type" data-ng-change="ro.userBasicDetails.govtID == 'Pan No' ? ro.userBasicDetails.noPanCard = false : ro.userBasicDetails.noPanCard = true;">
                       <option value="0">I have ...</option>
                       <option value="Aadhar Card">Aadhar Card</option>
                       <option value="Driver License">Driver's License</option>
                       <option value="Passport">Passport</option>
                       <option value="Voter ID">Voter ID</option>
+                      <option value="Pan No">Pan No</option>
                     </select>
                   </div>
                   <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
@@ -254,7 +255,7 @@
                   <div class="col-xs-12">
                     <label>Passport</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Passport" data-ng-model="ro.userBasicDetails.driverLicense" name="passport" data-ng-required="ro.userBasicDetails.govtID == 'Passport'" data-ng-pattern="ro.passportRegex" data-ng-class="{'validation-error': !userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.passport.$error.required ? 'Please enter Passport': 'Enter correct Passport'}}"/>
+                      <input type="text" class="form-control" placeholder="Passport" data-ng-model="ro.userBasicDetails.passport" name="passport" data-ng-required="ro.userBasicDetails.govtID == 'Passport'" data-ng-pattern="ro.passportRegex" data-ng-class="{'validation-error': !userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{userbasicdetails.passport.$error.required ? 'Please enter Passport': 'Enter correct Passport'}}"/>
                       <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userbasicdetails.passport.$valid && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
                       <div class="error visible-xs" data-ng-show="userbasicdetails.passport.$error.required && (buttonUserBasicDetailsFormClicked || !userbasicdetails.passport.$pristine)">
                         <span>Please enter Passport.</span>
@@ -288,7 +289,14 @@
                 </div>
               </div>
               <div class="form-group padding top-1x">
-                <button type="submit" class="btn btn-primary" data-ng-click="buttonUserBasicDetailsFormClicked = true">Continue</button>
+                <div class="row table-row">
+                  <div class="col-sm-3 vertical-top">
+                      <button type="submit" class="btn btn-primary" data-ng-click="buttonUserBasicDetailsFormClicked = true">Continue</button>
+                  </div>
+                  <div class="col-sm-9 vertical-middle">
+                    <a href="javascript:void(0)">Logout and continue later</a>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
