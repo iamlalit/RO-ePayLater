@@ -11,6 +11,7 @@
 
 		//common directives
 		'core.module',
+		'loader.module',
 
 		//Application specific
 		'mdnid.module',
