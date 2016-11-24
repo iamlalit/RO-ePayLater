@@ -92,27 +92,33 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-4 col-sm-4">
-              <select class="form-control">
+            <div class="col-xs-4 col-sm-3">
+              <select class="form-control" data-ng-model="ro.userAddressDetails.doIDay" data-ng-init="ro.userAddressDetails.doIDay = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIDay == '0' && buttonUserAddressDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select date of incorporation">
                 <option value="0">Day</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-4 col-sm-4">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userAddressDetails.doIMonth" data-ng-init="ro.userAddressDetails.doIMonth = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIMonth == '0' && buttonUserAddressDetailsFormClicked}">
                 <option value="0">Month</option>
                 <option>1</option>
                 <option>2</option>
               </select>
             </div>
             <div class="col-xs-4 col-sm-4">
-              <select class="form-control">
+              <select class="form-control" data-ng-model="ro.userAddressDetails.doIYear" data-ng-init="ro.userAddressDetails.doIYear = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIYear == '0' && buttonUserAddressDetailsFormClicked}">
                 <option value="0">Year</option>
                 <option>1989</option>
                 <option>1990</option>
               </select>
             </div>
+            <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
+              <span class="exclamation error" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+            </div>
+          </div>
+          <div class="error visible-xs" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked">
+            <span>Please select date of incorporation.</span>
           </div>
         </div>
         <div class="form-group padding top-1x">

@@ -6,10 +6,21 @@
 	useraddressdetailsService.$inject = ['$http', '$q'];
 
 	function useraddressdetailsService($http, $q){
-		var service;
+		var service,
+			userAddressDetailsObject = [{
+				"companyname": "",
+				"address": "",
+				"city": "",
+				"pincode": "",
+				"businesspan": "",
+				"doIDay": "0",
+				"doIMonth": "0",
+				"doIYear": "0"
+			}]
 
 		service = {
-      saveUserAddressDetails: saveUserAddressDetails
+      saveUserAddressDetails: saveUserAddressDetails,
+			userAddressDetailsObject: userAddressDetailsObject
     };
 
 		return service;
