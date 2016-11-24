@@ -3,9 +3,9 @@
 	angular.module('roorrmu.module')
 		.controller('roorrmuCntl', roorrmuCntl);
 
-	roorrmuCntl.$inject = ['roorrmuService'];
+	roorrmuCntl.$inject = ['roorrmuService', '$state'];
 
-	function roorrmuCntl(roorrmuService){
+	function roorrmuCntl(roorrmuService, $state){
 		var vm = this;
 		vm.submitRoOrRmuForm = submitRoOrRmuForm;
 
@@ -18,6 +18,7 @@
 		}
 
 		function submitRoOrRmuForm(isValid){
+			$state.go('userbasicdetails');
 			if(isValid){
 				//this API will call when user passed out of form validations
 				//this API function(getUserType) is written inside the services
