@@ -3,9 +3,9 @@
 	angular.module('otp.module')
 		.controller('otpCntl', otpCntl);
 
-	otpCntl.$inject = ['otpService'];
+	otpCntl.$inject = ['otpService','$state'];
 
-	function otpCntl(otpService){
+	function otpCntl(otpService,$state){
 		var vm = this;
 		vm.submitOtpForm = submitOtpForm;
 
@@ -29,7 +29,7 @@
 		//this is the function called when success is return from api call
 		function resolveAuthenticatedUser(data){
 			if(data == true){
-				//$state.go('otp');
+				$state.go('roorrmu',{userId: $state.params.userId});
 				//workflow on new user or existing user need to be added here
 				//api need to return is the user is new or old
 			}else{

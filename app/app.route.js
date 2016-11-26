@@ -15,30 +15,45 @@
 			}).
 			state('otp', {
 				url: '/otp',
+				 params: {
+                    userId: null
+                             },
 				templateUrl: 'otp/otp.html',
     		controller: 'otpCntl',
     		controllerAs: 'ro'
 			}).
 			state('roorrmu', {
 				url: '/roorrmu',
+				 params: {
+                       userId: null
+                         },
 				templateUrl: 'roorrmu/roorrmu.html',
     		controller: 'roorrmuCntl',
     		controllerAs: 'ro'
 			}).
 			state('userbasicdetails', {
 				url: '/userbasicdetails',
+				 params: {
+                           userId: null
+                          },
 				templateUrl: 'userbasicdetails/userbasicdetails.html',
     		controller: 'userbasicdetailsCntl',
     		controllerAs: 'ro'
 			}).
 			state('useraddressdetails', {
 				url: '/useraddressdetails',
+					 params: {
+                           userId: null
+                                },
 				templateUrl: 'useraddressdetails/useraddressdetails.html',
     		controller: 'useraddressdetailsCntl',
     		controllerAs: 'ro'
 			}).
 			state('userloandetails', {
 				url: '/userloandetails',
+				 params: {
+                         userId: null
+                        },
 				templateUrl: 'userloandetails/userloandetails.html',
     		controller: 'userloandetailsCntl',
     		controllerAs: 'ro'

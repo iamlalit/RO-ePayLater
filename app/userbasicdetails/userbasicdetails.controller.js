@@ -3,9 +3,9 @@
 	angular.module('userbasicdetails.module')
 		.controller('userbasicdetailsCntl', userbasicdetailsCntl);
 
-	userbasicdetailsCntl.$inject = ['userbasicdetailsService'];
+	userbasicdetailsCntl.$inject = ['userbasicdetailsService','$state'];
 
-	function userbasicdetailsCntl(userbasicdetailsService){
+	function userbasicdetailsCntl(userbasicdetailsService,$state){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -34,13 +34,13 @@
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
-				userbasicdetailsService.saveUserBasicDetails(vm.userBasicDetails).then(resolveUserDetails, errorUserDetails);
+				userbasicdetailsService.saveUserBasicDetails(vm.userBasicDetails,$state.params.userId).then(resolveUserDetails, errorUserDetails);
 			}
 		}
 		//this is the function called when success is return from api call
 		function resolveUserDetails(data){
-			if(data == true){
-				//$state.go('useraddressdetails');
+			if(data.status == true){
+				$state.go('useraddressdetails',{userId: data.userId});
 				//data is posted successfully
 			}
 		}
