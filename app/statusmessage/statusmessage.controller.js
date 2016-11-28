@@ -5,13 +5,12 @@
 
 	statusmessageCntl.$inject = ['statusmessageService', 'notificationService', '$rootScope', '$state'];
 
-	function statusmessageCntl(statusmessageService, notificationService, $rootScope, $state, $sessionstorage){
+	function statusmessageCntl(statusmessageService, notificationService, $rootScope, $state){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
 		vm.logout = logout;
 		vm.statusmessage = "processing";
-		$sessionstorage.userID = $state.params.userID;
 		activate();
 
 		///////////////////////////
@@ -25,7 +24,6 @@
 		}
 
 		function logout(){
-			$sessionstorage.clear();
 			// var data = {
 			// 	'message' : 'Successfully logout.',
 			// 	'error' : false
