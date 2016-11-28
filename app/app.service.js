@@ -4,9 +4,20 @@
 	angular.module('ro-app')
 		.service('roService', roService);
 
-	roService.$inject = [];
+	roService.$inject = ['$sessionstorage'];
 
-	function roService(){
+	function roService($sessionstorage){
+		var service = this;
 
+		service = {
+			logout: logout;
+		}
+
+		return service;
+
+
+		function logout(){
+			$sessionstorage.clear();
+		}
 	}
 })();
