@@ -3,9 +3,9 @@
 	angular.module('userbasicdetails.module')
 		.controller('userbasicdetailsCntl', userbasicdetailsCntl);
 
-	userbasicdetailsCntl.$inject = ['userbasicdetailsService','$state'];
+	userbasicdetailsCntl.$inject = ['userbasicdetailsService','$state', 'roService'];
 
-	function userbasicdetailsCntl(userbasicdetailsService,$state){
+	function userbasicdetailsCntl(userbasicdetailsService,$state, roService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -47,6 +47,10 @@
 		//this is the function called when error is return from api call
 		function errorUserDetails(error){
 			console.log(error);
+		}
+
+		function logout(){
+			roService.logout();
 		}
 
 	}
