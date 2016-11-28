@@ -66,6 +66,12 @@
 				templateUrl: 'loanrenewalform/loanrenewalform.html',
     		controller: 'loanrenewalformCntl',
     		controllerAs: 'ro'
+			}).
+			state('statusmessage', {
+				url: '/statusmessage',
+				templateUrl: 'statusmessage/statusmessage.html',
+    		controller: 'statusmessageCntl',
+    		controllerAs: 'ro'
 			})
 
 			$urlRouterProvider.otherwise('/');

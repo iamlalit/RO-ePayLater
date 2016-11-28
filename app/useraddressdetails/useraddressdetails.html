@@ -12,151 +12,151 @@
   <div class="col-sm-6 vertical-top col-xs-12">
     <div class="widget widget-left">
       <div class="row">
-  <div class="col-xs-12">
-    <div class="well well-ro">
-      <form data-ng-submit="ro.submitUserAddressDetails(userAddressDetails.$valid)" novalidate="true" name="userAddressDetails" data-ng-init="buttonUserAddressDetailsFormClicked = false;">
-        <div class="form-group">
-          <div class="row">
-            <div class="col-xs-12">
-              <label>Company Name</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Company name" name="companyname" required data-ng-model="ro.userAddressDetails.companyname" data-ng-class="{'validation-error': userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Company Name"/>
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)">
-                  <span>Please enter Company Name.</span>
+        <div class="col-xs-12">
+          <div class="well well-ro">
+            <form data-ng-submit="ro.submitUserAddressDetails(userAddressDetails.$valid)" novalidate="true" name="userAddressDetails" data-ng-init="buttonUserAddressDetailsFormClicked = false;">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Company Name</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Company name" name="companyname" required data-ng-model="ro.userAddressDetails.companyname" data-ng-class="{'validation-error': userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Company Name"/>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.companyname.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.companyname.$pristine)">
+                        <span>Please enter Company Name.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-xs-12">
-              <label>Address</label>
-              <div class="input-group">
-                <textarea class="form-control" placeholder="Address" name="address" required data-ng-model="ro.userAddressDetails.address" data-ng-class="{'validation-error': userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Address" rows="4"></textarea>
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)">
-                  <span>Please enter Address.</span>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Address</label>
+                    <div class="input-group">
+                      <textarea class="form-control" placeholder="Address" name="address" required data-ng-model="ro.userAddressDetails.address" data-ng-class="{'validation-error': userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Address" rows="4"></textarea>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.address.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.address.$pristine)">
+                        <span>Please enter Address.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-xs-12">
-              <label>City</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="City" name="city" required data-ng-model="ro.userAddressDetails.city" data-ng-class="{'validation-error': userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter City" />
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)">
-                  <span>Please enter City.</span>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>City</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="City" name="city" required data-ng-model="ro.userAddressDetails.city" data-ng-class="{'validation-error': userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter City" />
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.city.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.city.$pristine)">
+                        <span>Please enter City.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-xs-12">
-              <label>Pin code</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Pin Code" name="pincode" required data-ng-model="ro.userAddressDetails.pincode" data-ng-class="{'validation-error': userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Pin Code" />
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)">
-                  <span>Please enter Pin Code.</span>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Pin code</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Pin Code" name="pincode" required data-ng-model="ro.userAddressDetails.pincode" data-ng-class="{'validation-error': userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Pin Code" />
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.pincode.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.pincode.$pristine)">
+                        <span>Please enter Pin Code.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group" data-ng-if="!ro.userAddressDetails.noPanCard">
-          <div class="row">
-            <div class="col-xs-6">
-              <label>Business PAN No</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Business PAN No" name="businesspan" required data-ng-model="ro.userAddressDetails.businesspan" data-ng-class="{'validation-error': userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Business PAN No" />
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)">
-                  <span>Please enter Business PAN No.</span>
+              <div class="form-group" data-ng-if="!ro.userAddressDetails.noPanCard">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label>Business PAN No</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Business PAN No" name="businesspan" required data-ng-model="ro.userAddressDetails.businesspan" data-ng-class="{'validation-error': userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Business PAN No" />
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.businesspan.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.businesspan.$pristine)">
+                        <span>Please enter Business PAN No.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 padding top-0x">
+                    <label>&nbsp;</label>
+                    <a href="javascript:void(0)" data-ng-click="ro.userAddressDetails.noPanCard = true">I dont't have Business PAN No.</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 padding top-0x">
-              <label>&nbsp;</label>
-              <a href="javascript:void(0)" data-ng-click="ro.userAddressDetails.noPanCard = true">I dont't have Business PAN No.</a>
-            </div>
-          </div>
-        </div>
-        <div class="form-group" data-ng-if="ro.userAddressDetails.noPanCard">
-          <div class="row">
-            <div class="col-xs-6">
-              <label>Shop &amp; Establishment No.</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Shop &amp; Establishment No." name="shopEstablishment" required data-ng-model="ro.userAddressDetails.shopEstablishment" data-ng-class="{'validation-error': userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Shop &amp; Establishment No" />
-                <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-                <div class="error visible-xs" data-ng-show="userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)">
-                  <span>Please enter Shop &amp; Establishment No.</span>
+              <div class="form-group" data-ng-if="ro.userAddressDetails.noPanCard">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label>Shop or Establishment No.</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Shop or Establishment No." name="shopEstablishment" required data-ng-model="ro.userAddressDetails.shopEstablishment" data-ng-class="{'validation-error': userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please enter Shop or Establishment No" />
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                      <div class="error visible-xs" data-ng-show="userAddressDetails.shopEstablishment.$error.required && (buttonUserAddressDetailsFormClicked || !userAddressDetails.shopEstablishment.$pristine)">
+                        <span>Please enter Shop or Establishment No.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 padding top-0x">
+                    <label>&nbsp;</label>
+                    <a href="javascript:void(0)" data-ng-click="ro.userAddressDetails.noPanCard = false">I do have Business PAN No.</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 padding top-0x">
-              <label>&nbsp;</label>
-              <a href="javascript:void(0)" data-ng-click="ro.userAddressDetails.noPanCard = false">I don have Business PAN No.</a>
-            </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Date of Incorporation</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 col-sm-3">
+                    <select class="form-control" data-ng-model="ro.userAddressDetails.doIDay" data-ng-init="ro.userAddressDetails.doIDay = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIDay == '0' && buttonUserAddressDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select date of incorporation">
+                      <option value="0">Day</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-4 col-sm-4">
+                    <select class="form-control" data-ng-model="ro.userAddressDetails.doIMonth" data-ng-init="ro.userAddressDetails.doIMonth = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIMonth == '0' && buttonUserAddressDetailsFormClicked}">
+                      <option value="0">Month</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-4 col-sm-4">
+                    <select class="form-control" data-ng-model="ro.userAddressDetails.doIYear" data-ng-init="ro.userAddressDetails.doIYear = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIYear == '0' && buttonUserAddressDetailsFormClicked}">
+                      <option value="0">Year</option>
+                      <option>1989</option>
+                      <option>1990</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
+                    <span class="exclamation error" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
+                  </div>
+                </div>
+                <div class="error visible-xs" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked">
+                  <span>Please select date of incorporation.</span>
+                </div>
+              </div>
+              <div class="form-group padding top-1x">
+                <div class="row">
+                  <div class="col-sm-3">
+                      <button type="submit" class="btn btn-primary" data-ng-click="buttonUserAddressDetailsFormClicked = true">Continue</button>
+                  </div>
+                  <div class="col-sm-9 vertical-middle hide">
+                    <a href="javascript:void(0)">Logout and continue later</a>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-xs-12">
-              <label>Date of Incorporation</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4 col-sm-3">
-              <select class="form-control" data-ng-model="ro.userAddressDetails.doIDay" data-ng-init="ro.userAddressDetails.doIDay = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIDay == '0' && buttonUserAddressDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select date of incorporation">
-                <option value="0">Day</option>
-                <option>1</option>
-                <option>2</option>
-              </select>
-            </div>
-            <div class="col-xs-4 col-sm-4">
-              <select class="form-control" data-ng-model="ro.userAddressDetails.doIMonth" data-ng-init="ro.userAddressDetails.doIMonth = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIMonth == '0' && buttonUserAddressDetailsFormClicked}">
-                <option value="0">Month</option>
-                <option>1</option>
-                <option>2</option>
-              </select>
-            </div>
-            <div class="col-xs-4 col-sm-4">
-              <select class="form-control" data-ng-model="ro.userAddressDetails.doIYear" data-ng-init="ro.userAddressDetails.doIYear = '0'" data-ng-class="{'validation-error': ro.userAddressDetails.doIYear == '0' && buttonUserAddressDetailsFormClicked}">
-                <option value="0">Year</option>
-                <option>1989</option>
-                <option>1990</option>
-              </select>
-            </div>
-            <div class="col-sm-1 hidden-xs" style="padding-top:5px;">
-              <span class="exclamation error" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked"><i class="fa fa-exclamation-circle" popover-trig></i></span>
-            </div>
-          </div>
-          <div class="error visible-xs" data-ng-show="(ro.userAddressDetails.doIYear == '0' || ro.userAddressDetails.doIMonth == '0' || ro.userAddressDetails.doIDay == '0') && buttonUserAddressDetailsFormClicked">
-            <span>Please select date of incorporation.</span>
-          </div>
-        </div>
-        <div class="form-group padding top-1x">
-          <div class="row table-row">
-            <div class="col-sm-3 vertical-top">
-                <button type="submit" class="btn btn-primary" data-ng-click="buttonUserAddressDetailsFormClicked = true">Continue</button>
-            </div>
-            <div class="col-sm-9 vertical-middle">
-              <a href="javascript:void(0)">Logout and continue later</a>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+      </div>
     </div>
   </div>
 </div>

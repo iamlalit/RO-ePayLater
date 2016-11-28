@@ -6948,7 +6948,8 @@ ul.progressBar {
     ul.progressBar > li.active {
       color: #629c44;
       font-weight: 600;
-      margin-bottom: 3px; }
+      margin-bottom: 3px;
+      cursor: pointer; }
       ul.progressBar > li.active span.fa {
         vertical-align: middle;
         display: inline-block; }

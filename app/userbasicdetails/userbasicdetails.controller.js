@@ -3,9 +3,9 @@
 	angular.module('userbasicdetails.module')
 		.controller('userbasicdetailsCntl', userbasicdetailsCntl);
 
-	userbasicdetailsCntl.$inject = ['userbasicdetailsService'];
+	userbasicdetailsCntl.$inject = ['userbasicdetailsService', '$state'];
 
-	function userbasicdetailsCntl(userbasicdetailsService){
+	function userbasicdetailsCntl(userbasicdetailsService, $state){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -17,6 +17,7 @@
 		vm.driverLicenseRegex = new RegExp('^[0-9a-zA-Z]{4,9}$');
 		vm.passportRegex = new RegExp('[A-PR-WYa-pr-wy][1-9][0-9]\\s?[0-9]{4}[1-9]$');
 		vm.userBasicDetails = userbasicdetailsService.userBasicDetailsObject;
+		vm.goToState = goToState;
 		activate();
 
 		///////////////////////////
@@ -27,6 +28,10 @@
 
 		function returnPartial(view){
 			return './shared/partial/_' + view + '.html';
+		}
+
+		function goToState(str){
+			$state.go(str);
 		}
 
 		function submitUserBasicDetailsForm(isValid){

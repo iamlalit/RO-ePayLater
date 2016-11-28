@@ -12,6 +12,7 @@
 		//common directives
 		'core.module',
 		'loader.module',
+		'notification.module',
 
 		//Application specific
 		'mdnid.module',
@@ -23,6 +24,8 @@
 		'userdownloadform.module',
 		'signedForm.module',
 		'thankyou.module',
-		'loanrenewalform.module'
+		'loanrenewalform.module',
+		'notification.module',
+		'statusmessage.module'
 	]);
 })();

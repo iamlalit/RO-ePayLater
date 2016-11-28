@@ -22,11 +22,13 @@
 				"govtID": 0,
 				"aadharCard": "",
 				"driverLicense": "",
+				"dlDay": "0",
 				"dlMonth": "0",
 				"dlYear": "0",
 				"passport": "",
 				"passsportMonth": "0",
 				"passportYear": "0",
+				"passsportDay": "0",
 				"voterId": ""
 			};
 
