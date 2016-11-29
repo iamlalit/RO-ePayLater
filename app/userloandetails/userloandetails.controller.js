@@ -3,9 +3,9 @@
 	angular.module('userloandetails.module')
 		.controller('userloandetailsCntl', userloandetailsCntl);
 
-	userloandetailsCntl.$inject = ['userloandetailsService', '$scope','$state'];
+	userloandetailsCntl.$inject = ['userloandetailsService', '$scope','$state','roService'];
 
-	function userloandetailsCntl(userloandetailsService, $scope,$state){
+	function userloandetailsCntl(userloandetailsService, $scope,$state,roService){
 		var vm = this;
 		vm.userloandetails = [];
 		vm.returnPartial = returnPartial;
@@ -14,6 +14,7 @@
 		vm.userloandetails.idProofs = userloandetailsService.idProofs;
 		vm.userloandetails.addressProofs = userloandetailsService.addressProofs;
 		vm.uploadCopy = uploadCopy;
+		vm.logout = logout;
 		activate();
 
 		///////////////////////////
@@ -41,6 +42,9 @@
 				//data is posted successfully
 			}
 		}
+			function logout(){
+                   roService.logout();
+                   		}
 		//this is the function called when error is return from api call
 		function errorUserDetails(error){
 			console.log(error);

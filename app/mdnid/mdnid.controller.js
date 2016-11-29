@@ -3,9 +3,9 @@
 	angular.module('mdnid.module')
 		.controller('mdnidCntl', mdnidCntl);
 
-	mdnidCntl.$inject = ['mdnidService', '$state', 'loaderService'];
+	mdnidCntl.$inject = ['mdnidService', '$state', 'loaderService','roService'];
 
-	function mdnidCntl(mdnidService, $state, loaderService){
+	function mdnidCntl(mdnidService, $state, loaderService,roService){
 		var vm = this;
 		vm.phoneNumberRegex = '\\d{10}';
 		vm.mdnidregex = '\\d{7}';
@@ -31,9 +31,10 @@
 		}
 		//this is the function called when success is return from api call
 		function resolveAuthenticatedUser(data){
-			if(data == true){
+			if(data.status == true){
 				loaderService.toggle(false);
-				$state.go('otp');
+				roService.login(data.userId);
+				$state.go('otp',{userId : data.userId});
 			}
 		}
 		//this is the function called when error is return from api call
