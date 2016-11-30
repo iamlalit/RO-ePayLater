@@ -29,10 +29,11 @@
 
 		function submitUserLoanDetailsForm(isValid){
 			if(isValid){
+				debugger;
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
-				userloandetailsService.saveUserLoanDetails(vm.userLoanDetails).then(resolveUserDetails, errorUserDetails);
+				userloandetailsService.saveUserLoanDetails(vm.userLoanDetails, vm.userloandetails).then(resolveUserDetails, errorUserDetails);
 			}
 		}
 		//this is the function called when success is return from api call
@@ -64,7 +65,6 @@
 					vm.userloandetails.idProofs.fakeValue = [];
 					$timeout(function() {
 						$scope.$apply(function () {
-
 		            if (e && e.files) {
 		                for (var i = 0; i < e.files.length; i++) {
 		                    if (vm.userloandetails.idProofs.fakeValue.indexOf(e.files[i].name) !== -1) continue;
