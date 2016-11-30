@@ -3,14 +3,15 @@
 	angular.module('useraddressdetails.module')
 		.controller('useraddressdetailsCntl', useraddressdetailsCntl);
 
-	useraddressdetailsCntl.$inject = ['useraddressdetailsService', '$state'];
+	useraddressdetailsCntl.$inject = ['useraddressdetailsService', '$state','roService'];
 
-	function useraddressdetailsCntl(useraddressdetailsService, $state){
+	function useraddressdetailsCntl(useraddressdetailsService, $state,roService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
 		vm.submitUserAddressDetails = submitUserAddressDetails;
 		vm.userAddressDetailsObject = useraddressdetailsService.userAddressDetailsObject;
+		vm.logout = logout;
 		activate();
 
 		///////////////////////////
@@ -42,5 +43,9 @@
 		function errorUserDetails(error){
 			console.log(error);
 		}
+		function logout(){
+           roService.logout();
+           		}
+
 	}
 })();

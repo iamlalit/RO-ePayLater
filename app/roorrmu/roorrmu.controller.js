@@ -3,11 +3,12 @@
 	angular.module('roorrmu.module')
 		.controller('roorrmuCntl', roorrmuCntl);
 
-	roorrmuCntl.$inject = ['roorrmuService', '$state'];
+	roorrmuCntl.$inject = ['roorrmuService', '$state','roService'];
 
-	function roorrmuCntl(roorrmuService, $state){
+	function roorrmuCntl(roorrmuService, $state,roService){
 		var vm = this;
 		vm.submitRoOrRmuForm = submitRoOrRmuForm;
+		vm.logout = logout;
 
 		activate();
 
@@ -35,5 +36,8 @@
 		function errorUserType(error){
 			console.log(error);
 		}
+			function logout(){
+        			roService.logout();
+        		}
 	}
 })();
