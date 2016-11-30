@@ -23,6 +23,7 @@
 		'userdownloadform.module',
 		'signedForm.module',
 		'thankyou.module',
-		'loanrenewalform.module'
+		'loanrenewalform.module',
+		'statusmessage.module'
 	]);
 })();
