@@ -3,14 +3,14 @@
 	angular.module('statusmessage.module')
 		.controller('statusmessageCntl', statusmessageCntl);
 
-	statusmessageCntl.$inject = ['statusmessageService', 'notificationService', '$rootScope', '$state'];
+	statusmessageCntl.$inject = ['statusmessageService', '$rootScope', '$state'];
 
-	function statusmessageCntl(statusmessageService, notificationService, $rootScope, $state){
+	function statusmessageCntl(statusmessageService, $rootScope, $state){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
 		vm.logout = logout;
-		vm.statusmessage = "processing";
+		vm.statusmessage = $state.params.statusmessage;
 		activate();
 
 		///////////////////////////

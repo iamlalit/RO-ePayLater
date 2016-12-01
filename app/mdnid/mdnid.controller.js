@@ -34,7 +34,7 @@
 			if(data.status == true){
 				loaderService.toggle(false);
 				roService.login(data.userId);
-				$state.go('otp',{userId : data.userId});
+				$state.go('otp',{userId : data.userId,requestId : data.requestId,phone : data.phone,mdnid : data.mdnid });
 			}
 		}
 		//this is the function called when error is return from api call

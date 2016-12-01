@@ -16,7 +16,10 @@
 			state('otp', {
 				url: '/otp',
 				 params: {
-                    userId: null
+                    userId: null,
+                    requestId : null,
+                    phone : null,
+                    mdnid : null
                              },
 				templateUrl: 'otp/otp.html',
     		controller: 'otpCntl',
@@ -84,6 +87,9 @@
 			}).
 			state('statusmessage', {
 				url: '/statusmessage',
+				params: {
+				          statusmessage: null
+                     },
 				templateUrl: 'statusmessage/statusmessage.html',
     		controller: 'statusmessageCntl',
     		controllerAs: 'ro'

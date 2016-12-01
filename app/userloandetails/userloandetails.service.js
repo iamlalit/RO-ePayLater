@@ -19,20 +19,32 @@
 
 		return service;
 
-		function saveUserLoanDetails(user,id) {
+		function saveUserLoanDetails(users, user,userId) {
 				var deferred = $q.defer();
+				var formData = new FormData();
+        formData.append("user", users);
 
+        var opts = {
+            transformRequest: angular.identity,
+            headers: { 'Content-Type': undefined }
+        };
+				debugger;
+				if (user.idProofs.value) {
+	        for (var fileIndex = 0; fileIndex < user.idProofs.value.length; fileIndex++) {
+	            formData.append("file" + fileIndex, user.idProofs.value[fileIndex]);
+	        }
+				}
 				//in url please enter url of the api
 				//mehtod could be get,post, delete and others standard http requet method
 				//params will consist of the list of parameter(comma separated) that need to be passed in API call
-			//	saveUserLoanDetails
 				$http({
-						url : 'https://dev.epaylater.in/epayLaterView/saveUserLoanDetails',
-						method: "GET",
+						url : https://dev.epaylater.in/epayLaterView/saveUserLoanDetails',
+						method: "POST",
 						params: {
-							user: user,
-							userId : id
-						}
+							formData: formData,
+							userId: userId
+						},
+						headers : {'Content-Type' : 'multipart/form-data'}
 				})
 				.success(function (data) {
 						deferred.resolve(data);
