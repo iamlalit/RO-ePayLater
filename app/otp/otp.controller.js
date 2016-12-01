@@ -29,8 +29,10 @@
 		//this is the function called when success is return from api call
 		function resolveAuthenticatedUser(data){
 			if(data.status == true){
-			if(data.applicationStatus== "none")
+			if(data.applicationStatus == "none")
 				$state.go('roorrmu',{userId: $state.params.userId});
+				else if(data.applicationStatus == "applicableForRenewal")
+				$state.go('loanrenewal',{userId: $state.params.userId});
 				else
 				$state.go('statusmessage',{statusmessage: data.applicationStatus});
 				//workflow on new user or existing user need to be added here
