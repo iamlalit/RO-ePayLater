@@ -83,7 +83,8 @@
 				url: '/loanrenewal',
 				params: {
                          mdnid: null,
-                         phone:null
+                         phone:null,
+                         userId:null
                         },
 				templateUrl: 'loanrenewalform/loanrenewalform.html',
     		controller: 'loanrenewalformCntl',

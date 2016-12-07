@@ -14,7 +14,7 @@
 
     		return service;
 
-    		function saveRenewalData(userLoanDetails,mdnid,phone) {
+    		function saveRenewalData(userLoanDetails,mdnid,phone,id) {
             var deferred = $q.defer();
 
     				//in url please enter url of the api
@@ -26,7 +26,8 @@
                 params: {
                 userLoanDetails:userLoanDetails,
                 mdnid:mdnid,
-                phone:phone
+                phone:phone,
+                userId:id
     						}
             })
             .success(function (data) {

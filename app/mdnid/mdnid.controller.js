@@ -8,7 +8,7 @@
 	function mdnidCntl(mdnidService, $state, loaderService,roService){
 		var vm = this;
 		vm.phoneNumberRegex = '\\d{10}';
-		vm.mdnidregex = '\\d{7}';
+		vm.mdnidregex = '\\d{10}';
 		vm.submitMdnidForm = submitMdnidForm;
 		activate();
 

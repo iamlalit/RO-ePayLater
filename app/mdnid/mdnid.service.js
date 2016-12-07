@@ -31,7 +31,7 @@
         .success(function (data) {
             deferred.resolve(data);
         })
-        .error(function () {
+        .error(function (data) {
             deferred.reject("Failed to get data");
         });
 				

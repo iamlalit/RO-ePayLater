@@ -85,7 +85,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <h4 class="padding top-1x bottom-2x text-center">Sorry, you are eligible for upto Rs. XXX.</h4>
+        <h4 class="padding top-1x bottom-2x text-center">Sorry, you are eligible for upto Rs.{{ro.loanAmount}}</h4>
         <div class="row text-center">
           <div classs="form-group">
             <a href="javascript:void(0)" class="btn btn-primary" data-dismiss="modal">Change Amount</a>
@@ -98,7 +98,7 @@
         </div>
         <div class="row text-center padding top-0x bottom-2x">
           <div classs="form-group">
-            <a href="javascript:void(0)" class="btn btn-primary" ui-sref="mdnid">Re-apply</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-ng-click="ro.gotorormu()">Re-apply</a>
           </div>
         </div>
       </div>
