@@ -30,7 +30,7 @@
                     roService.logout();
                    		}
                   function gotorormu(){
-                  $state.go('roorrmu',$state.params.userId);
+                  $state.go('roorrmu',{userId: $state.params.userId});
                                     }
 
         	function resolveAuthenticatedUser(data){
