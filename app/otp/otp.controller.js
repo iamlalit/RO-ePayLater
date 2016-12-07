@@ -32,7 +32,7 @@
 			if(data.applicationStatus == "none")
 				$state.go('roorrmu',{userId: $state.params.userId});
 				else if(data.applicationStatus == "applicableForRenewal")
-				$state.go('loanrenewal',{userId: $state.params.userId});
+				$state.go('loanrenewal',{mdnid: $state.params.mdnid , phone: $state.params.phone});
 				else
 				$state.go('statusmessage',{statusmessage: data.applicationStatus});
 				//workflow on new user or existing user need to be added here

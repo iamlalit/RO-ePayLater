@@ -3,16 +3,18 @@
 	angular.module('loanrenewalform.module')
 	.service('loanrenewalformService', loanrenewalformService);
 
-	loanrenewalformService.$inject = [];
+	loanrenewalformService.$inject = ['$http', '$q'];
 
-	function loanrenewalformService(){
-	service = {
-          updateLoanAmount: updateLoanAmount
+		function loanrenewalformService($http, $q){
+    		var service;
+
+    		service = {
+          saveRenewalData: saveRenewalData
         };
 
     		return service;
 
-    		function updateLoanAmount(loanAmt) {
+    		function saveRenewalData(userLoanDetails,mdnid,phone) {
             var deferred = $q.defer();
 
     				//in url please enter url of the api
@@ -22,7 +24,9 @@
                 url : 'https://dev.epaylater.in/epayLaterView/updateLoanAmount',
                 method: "GET",
                 params: {
-    							loanAmt: loanAmt
+                userLoanDetails:userLoanDetails,
+                mdnid:mdnid,
+                phone:phone
     						}
             })
             .success(function (data) {
@@ -35,8 +39,5 @@
             return deferred.promise;
         }
     	}
-
-
-	}
 
 })(window);

@@ -3,9 +3,9 @@
 	angular.module('userloandetails.module')
 		.controller('userloandetailsCntl', userloandetailsCntl);
 
-	userloandetailsCntl.$inject = ['userloandetailsService', '$scope', '$timeout','roService'];
+	userloandetailsCntl.$inject = ['userloandetailsService', '$scope', '$timeout','roService','$state','$http'];
 
-	function userloandetailsCntl(userloandetailsService, $scope, $timeout,roService){
+	function userloandetailsCntl(userloandetailsService, $scope, $timeout,roService,$state,$http){
 		var vm = this;
 		vm.userloandetails = [];
 		vm.returnPartial = returnPartial;
@@ -57,7 +57,6 @@
 		function uploadCopy(id){
 			document.getElementById(id).click();
 		}
-
 		$scope.fileNameChangedIdProof = function(e){
 
 			if (!vm.userloandetails.idProofs.value)

@@ -81,6 +81,10 @@
 			}).
 			state('loanrenewal', {
 				url: '/loanrenewal',
+				params: {
+                         mdnid: null,
+                         phone:null
+                        },
 				templateUrl: 'loanrenewalform/loanrenewalform.html',
     		controller: 'loanrenewalformCntl',
     		controllerAs: 'ro'
