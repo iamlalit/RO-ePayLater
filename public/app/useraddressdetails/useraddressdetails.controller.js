@@ -3,14 +3,15 @@
 	angular.module('useraddressdetails.module')
 		.controller('useraddressdetailsCntl', useraddressdetailsCntl);
 
-	useraddressdetailsCntl.$inject = ['useraddressdetailsService'];
+	useraddressdetailsCntl.$inject = ['useraddressdetailsService', '$state','roService'];
 
-	function useraddressdetailsCntl(useraddressdetailsService){
+	function useraddressdetailsCntl(useraddressdetailsService, $state,roService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
 		vm.submitUserAddressDetails = submitUserAddressDetails;
 		vm.userAddressDetailsObject = useraddressdetailsService.userAddressDetailsObject;
+		vm.logout = logout;
 		activate();
 
 		///////////////////////////
@@ -28,13 +29,13 @@
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
-				useraddressdetailsService.saveUserAddressDetails(vm.userAddressDetails).then(resolveUserDetails, errorUserDetails);
+				useraddressdetailsService.saveUserAddressDetails(vm.userAddressDetails,$state.params.userId).then(resolveUserDetails, errorUserDetails);
 			}
 		}
 		//this is the function called when success is return from api call
 		function resolveUserDetails(data){
-			if(data == true){
-				//$state.go('userloandetails');
+			if(data.status == true){
+				$state.go('userloandetails',{userId:$state.params.userId});
 				//data is posted successfully
 			}
 		}
@@ -42,7 +43,9 @@
 		function errorUserDetails(error){
 			console.log(error);
 		}
-
+		function logout(){
+           roService.logout();
+           		}
 
 	}
 })();

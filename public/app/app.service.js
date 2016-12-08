@@ -4,9 +4,27 @@
 	angular.module('ro-app')
 		.service('roService', roService);
 
-	roService.$inject = [];
+	roService.$inject = ['$window','$state'];
 
-	function roService(){
+	function roService($window,$state){
+		var service = this;
 
+		service = {
+			logout: logout,
+			login : login
+		}
+		//this is how you need to add
+		//$window.sessionStorage.setItem("userId", "12");
+		return service;
+
+
+		function logout(){
+			$window.sessionStorage.clear();
+			$state.go('mdnid');
+		}
+
+		function login(userId){
+			$window.sessionStorage.setItem("userId", userId);
+		}
 	}
 })();

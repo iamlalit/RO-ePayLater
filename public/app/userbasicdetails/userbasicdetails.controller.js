@@ -3,9 +3,9 @@
 	angular.module('userbasicdetails.module')
 		.controller('userbasicdetailsCntl', userbasicdetailsCntl);
 
-	userbasicdetailsCntl.$inject = ['userbasicdetailsService'];
+	userbasicdetailsCntl.$inject = ['userbasicdetailsService','$state', 'roService'];
 
-	function userbasicdetailsCntl(userbasicdetailsService){
+	function userbasicdetailsCntl(userbasicdetailsService,$state, roService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -17,6 +17,7 @@
 		vm.driverLicenseRegex = new RegExp('^[0-9a-zA-Z]{4,9}$');
 		vm.passportRegex = new RegExp('[A-PR-WYa-pr-wy][1-9][0-9]\\s?[0-9]{4}[1-9]$');
 		vm.userBasicDetails = userbasicdetailsService.userBasicDetailsObject;
+		vm.logout = logout;
 		activate();
 
 		///////////////////////////
@@ -24,6 +25,7 @@
 		function activate(){
 
 		}
+
 
 		function returnPartial(view){
 			return './shared/partial/_' + view + '.html';
@@ -34,13 +36,17 @@
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
-				userbasicdetailsService.saveUserBasicDetails(vm.userBasicDetails).then(resolveUserDetails, errorUserDetails);
+				userbasicdetailsService.saveUserBasicDetails(vm.userBasicDetails,$state.params.userId).then(resolveUserDetails, errorUserDetails);
 			}
 		}
+		 function logout(){
+        			roService.logout();
+        		}
+
 		//this is the function called when success is return from api call
 		function resolveUserDetails(data){
-			if(data == true){
-				//$state.go('useraddressdetails');
+			if(data.status == true){
+				$state.go('useraddressdetails',{userId: data.userId});
 				//data is posted successfully
 			}
 		}
@@ -48,6 +54,5 @@
 		function errorUserDetails(error){
 			console.log(error);
 		}
-
 	}
 })();

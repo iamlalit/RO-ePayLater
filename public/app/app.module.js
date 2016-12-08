@@ -11,6 +11,7 @@
 
 		//common directives
 		'core.module',
+		'loader.module',
 
 		//Application specific
 		'mdnid.module',
@@ -21,6 +22,8 @@
 		'userloandetails.module',
 		'userdownloadform.module',
 		'signedForm.module',
-		'thankyou.module'
+		'thankyou.module',
+		'loanrenewalform.module',
+		'statusmessage.module'
 	]);
 })();

@@ -1,5 +1,5 @@
 <div class="row table-row">
-  <div class="col-sm-6 vertical-top hidden-xs">
+  <div class="col-sm-6 vertical-middle hidden-xs">
     <ul class="progressBar" progress-state>
       <li class="active"><span class="fa fa-check-circle"></span><span>RO / RMU Details</span></li>
       <li class="active"><span class="fa fa-check-circle"></span><span>Promoter / Proprietor Information</span></li>
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="well well-ro">
-            <form novalidate="true" data-ng-submit="ro.submitUserLoanDetailsForm(userloandetails.$valid)" name="userloandetails" data-ng-init="buttonUserLoanDetailsFormClicked = false;">
+            <form novalidate="true" data-ng-submit="ro.submitUserLoanDetailsForm(userloandetails.$valid)" enctype="multipart/form-data" name="userloandetails" data-ng-init="buttonUserLoanDetailsFormClicked = false;">
               <div class="form-group">
                 <div class="row">
                   <div class="col-xs-12">
@@ -39,6 +39,33 @@
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
                     </select>
                   </div>
                   <div class="col-sm-1 hidden-xs padding top-2x">
@@ -100,10 +127,10 @@
               <div class="form-group padding top-1x">
                 <div class="row table-row">
                   <div class="col-sm-3 vertical-top">
-                      <button type="submit" class="btn btn-primary" data-ng-click="buttonUserLoanDetailsFormClicked = true">Continue</button>
+                    <button type="submit" class="btn btn-primary" data-ng-click="buttonUserLoanDetailsFormClicked = true">Continue</button>
                   </div>
                   <div class="col-sm-9 vertical-middle">
-                    <a href="javascript:void(0)">Logout and continue later</a>
+                    <a href="javascript:void(0)" data-ng-click="ro.logout()">Logout and continue later</a>
                   </div>
                 </div>
               </div>

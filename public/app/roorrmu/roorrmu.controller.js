@@ -3,11 +3,12 @@
 	angular.module('roorrmu.module')
 		.controller('roorrmuCntl', roorrmuCntl);
 
-	roorrmuCntl.$inject = ['roorrmuService'];
+	roorrmuCntl.$inject = ['roorrmuService', '$state','roService'];
 
-	function roorrmuCntl(roorrmuService){
+	function roorrmuCntl(roorrmuService, $state,roService){
 		var vm = this;
 		vm.submitRoOrRmuForm = submitRoOrRmuForm;
+		vm.logout = logout;
 
 		activate();
 
@@ -22,18 +23,21 @@
 				//this API will call when user passed out of form validations
 				//this API function(getUserType) is written inside the services
 				//this will either return success(resolveUserType) or error message(errorUserType)
-				roorrmuService.postUserType(vm.userType).then(resolveUserType, errorUserType);
+				roorrmuService.postUserType(vm.userType,$state.params.userId).then(resolveUserType, errorUserType);
 			}
 		}
 		//this is the function called when success is return from api call
 		function resolveUserType(data){
-			if(data == true){
-				//$state.go('userbasicdetails');
-			}
+			if(data.status == true){
+                 $state.go('userbasicdetails',{userId : data.userId});
+                 			}
 		}
 		//this is the function called when error is return from api call
 		function errorUserType(error){
 			console.log(error);
 		}
+			function logout(){
+        			roService.logout();
+        		}
 	}
 })();

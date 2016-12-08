@@ -3,11 +3,10 @@
 	angular.module('userloandetails.module')
 		.controller('userloandetailsCntl', userloandetailsCntl);
 
-	userloandetailsCntl.$inject = ['userloandetailsService', '$scope'];
+	userloandetailsCntl.$inject = ['userloandetailsService', '$scope', '$timeout','roService','$state','$http'];
 
-	function userloandetailsCntl(userloandetailsService, $scope){
+	function userloandetailsCntl(userloandetailsService, $scope, $timeout,roService,$state,$http){
 		var vm = this;
-
 		vm.userloandetails = [];
 		vm.returnPartial = returnPartial;
 		vm.submitUserLoanDetailsForm = submitUserLoanDetailsForm;
@@ -15,6 +14,7 @@
 		vm.userloandetails.idProofs = userloandetailsService.idProofs;
 		vm.userloandetails.addressProofs = userloandetailsService.addressProofs;
 		vm.uploadCopy = uploadCopy;
+		vm.logout = logout;
 		activate();
 
 		///////////////////////////
@@ -32,16 +32,19 @@
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
-				userloandetailsService.saveUserLoanDetails(vm.userLoanDetails).then(resolveUserDetails, errorUserDetails);
+				userloandetailsService.saveUserLoanDetails(vm.userLoanDetails, vm.userloandetails,$state.params.userId).then(resolveUserDetails, errorUserDetails);
 			}
 		}
 		//this is the function called when success is return from api call
 		function resolveUserDetails(data){
-			if(data == true){
-				//$state.go('useraddressdetails');
+			if(data.status == true){
+				$state.go('thankyou');
 				//data is posted successfully
 			}
 		}
+			function logout(){
+                   roService.logout();
+                   		}
 		//this is the function called when error is return from api call
 		function errorUserDetails(error){
 			console.log(error);
@@ -54,16 +57,26 @@
 		function uploadCopy(id){
 			document.getElementById(id).click();
 		}
+		$scope.fileNameChangedIdProof = function(e){
 
-		$scope.fileNameChangedIdProof = function(event){
-			var value = event.target.value;
-	    if(typeof value !== "undefined"){
-	      var fakeValue = value.replace('C:\\fakepath\\', '');
-	      $scope.$apply(function() {
-	          vm.userloandetails.idProofs[vm.userloandetails.idProofs.length-1].fakeValue = fakeValue;
-						vm.userloandetails.idProofs[vm.userloandetails.idProofs.length-1].value = value;
-	      });
-	    }
+			if (!vm.userloandetails.idProofs.value)
+					vm.userloandetails.idProofs.value = [];
+
+			if (!vm.userloandetails.idProofs.fakeValue)
+					vm.userloandetails.idProofs.fakeValue = [];
+					$timeout(function() {
+						$scope.$apply(function () {
+		            if (e && e.files) {
+		                for (var i = 0; i < e.files.length; i++) {
+		                    if (vm.userloandetails.idProofs.fakeValue.indexOf(e.files[i].name) !== -1) continue;
+
+		                    vm.userloandetails.idProofs.fakeValue.push((e.files[i].name).replace('C:\\fakepath\\', ''));
+		                    vm.userloandetails.idProofs.value.push(e.files[i]);
+		                }
+		            }
+		        });
+					}, 0);
+				console.log(vm.userloandetails.idProofs);
 		}
 
 		$scope.fileNameChangedAddressProof = function(event){

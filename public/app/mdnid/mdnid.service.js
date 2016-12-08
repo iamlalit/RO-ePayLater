@@ -21,7 +21,7 @@
 				//mehtod could be get,post, delete and others standard http requet method
 				//params will consist of the list of parameter(comma separated) that need to be passed in API call
         $http({
-            url : 'url',
+            url : 'https://dev.epaylater.in/epayLaterView/saveMdnidData',
             method: "GET",
             params: {
 							mdnid: mdnid,
@@ -31,7 +31,7 @@
         .success(function (data) {
             deferred.resolve(data);
         })
-        .error(function () {
+        .error(function (data) {
             deferred.reject("Failed to get data");
         });
 				
