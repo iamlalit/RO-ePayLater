@@ -34,9 +34,9 @@
 		//this is the function called when success is return from api call
 		function resolveAuthenticatedUser(data){
 			if(data.status == true){
-				loaderService.toggle(false);
 				roService.login(data.userId);
 				$state.go('otp',{userId : data.userId,requestId : data.requestId,phone : data.phone,mdnid : data.mdnid });
+				loaderService.toggle(false);
 			}
 			else if(data.status == false)
 			{

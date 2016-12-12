@@ -74,6 +74,9 @@
 			}).
 			state('thankyou', {
 				url: '/thankyou',
+				params: {
+                     userId: null
+                                  },
 				templateUrl: 'thankyou/thankyou.html',
     		controller: 'thankyouCntl',
     		controllerAs: 'ro'
@@ -92,7 +95,8 @@
 			state('statusmessage', {
 				url: '/statusmessage',
 				params: {
-				          statusmessage: null
+				          statusmessage: null,
+				          userId:null
                      },
 				templateUrl: 'statusmessage/statusmessage.html',
     		controller: 'statusmessageCntl',
