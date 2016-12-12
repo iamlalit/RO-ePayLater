@@ -8,6 +8,7 @@
 	function otpCntl(otpService,$state,roService,$scope){
 		var vm = this;
 		vm.submitOtpForm = submitOtpForm;
+		vm.errorMessage ="";
 
 		activate();
 
@@ -39,6 +40,8 @@
 			}else{
 				//wrong otp
 				//otp authentication failed
+				vm.errorMessage = data.errorText;
+
 			}
 		}
 		//this is the function called when error is return from api call
