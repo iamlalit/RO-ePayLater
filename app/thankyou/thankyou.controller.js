@@ -3,9 +3,9 @@
 	angular.module('thankyou.module')
 		.controller('thankyouCntl', thankyouCntl);
 
-	thankyouCntl.$inject = ['thankyouService','roService','$state'];
+	thankyouCntl.$inject = ['thankyouService','roService','$state','loaderService'];
 
-	function thankyouCntl(thankyouService,roService,$state){
+	function thankyouCntl(thankyouService,roService,$state,loaderService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -16,7 +16,9 @@
 		///////////////////////////
 
 		function activate(){
+						loaderService.toggle(true);
                          roService.checkUserIsLoggedIn($state.params.userId);
+                						loaderService.toggle(false);
                 		}
           function logout(){
                 roService.logout();
