@@ -22,7 +22,7 @@
 				//params will consist of the list of parameter(comma separated) that need to be passed in API call
         $http({
             url : 'https://dev.epaylater.in/epayLaterView/saveRoRmu',
-            method: "GET",
+            method: "POST",
             params: {
 							userType: userType,
 							userId : id

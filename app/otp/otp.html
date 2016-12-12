@@ -5,6 +5,9 @@
         <div class="col-xs-12">
           <div class="well well-ro">
             <form novalidate="true" data-ng-submit="ro.submitOtpForm(otpForm.$valid)" name="otpForm">
+              <div>
+                <span>{{ro.errorMessage}}</span>
+              </div>
               <div class="form-group">
                 <label>Enter the OTP to verify your phone</label>
                 <input type="text" class="form-control" placeholder="OTP" required data-ng-model="ro.otp"/>
