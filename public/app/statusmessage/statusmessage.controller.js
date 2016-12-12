@@ -3,9 +3,9 @@
 	angular.module('statusmessage.module')
 		.controller('statusmessageCntl', statusmessageCntl);
 
-	statusmessageCntl.$inject = ['statusmessageService', '$rootScope', '$state'];
+	statusmessageCntl.$inject = ['statusmessageService', '$rootScope', '$state','roService'];
 
-	function statusmessageCntl(statusmessageService, $rootScope, $state){
+	function statusmessageCntl(statusmessageService, $rootScope, $state,roService){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
