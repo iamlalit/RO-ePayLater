@@ -33,9 +33,11 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-xs-12 col-sm-6">
-                    <label>Tenor in Days</label>
+                    <label>Number in Days</label>
                     <select class="form-control" data-ng-model="ro.userLoanDetails.tenor" name="tenor" data-ng-init="ro.userLoanDetails.tenor = '0'" data-ng-class="{'validation-error': ro.userLoanDetails.tenor == '0' && buttonUserLoanDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please select tenor">
                       <option value="0">Select days</option>
+                      <option>3</option>
+                      <option>4</option>
                       <option>5</option>
                       <option>6</option>
                       <option>7</option>
