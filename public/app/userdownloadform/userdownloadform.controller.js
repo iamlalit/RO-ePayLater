@@ -3,9 +3,9 @@
 	angular.module('userdownloadform.module')
 		.controller('userdownloadformCntl', userdownloadformCntl);
 
-	userdownloadformCntl.$inject = ['userdownloadformService','roService'];
+	userdownloadformCntl.$inject = ['userdownloadformService','roService','$state'];
 
-	function userdownloadformCntl(userdownloadformService,roService){
+	function userdownloadformCntl(userdownloadformService,roService,$state){
 		var vm = this;
 
 		vm.returnPartial = returnPartial;
@@ -15,8 +15,8 @@
 		///////////////////////////
 
 		function activate(){
-
-		}
+                         roService.checkUserIsLoggedIn($state.params.userId);
+                		}
 			function logout(){
                    roService.logout();
                    		}

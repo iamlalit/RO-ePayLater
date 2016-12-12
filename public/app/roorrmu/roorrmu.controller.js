@@ -15,8 +15,8 @@
 		///////////////////////////
 
 		function activate(){
-
-		}
+                 roService.checkUserIsLoggedIn($state.params.userId);
+        		}
 
 		function submitRoOrRmuForm(isValid){
 			if(isValid){

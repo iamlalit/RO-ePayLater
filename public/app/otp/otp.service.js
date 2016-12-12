@@ -14,7 +14,7 @@
 
 		return service;
 
-		function getAuthenticatedUser(otp,requestId,phone,mdnid) {
+		function getAuthenticatedUser(otp,phone,mdnid) {
         var deferred = $q.defer();
 
 				//in url please enter url of the api
@@ -22,10 +22,9 @@
 				//params will consist of the list of parameter(comma separated) that need to be passed in API call
         $http({
             url : 'https://dev.epaylater.in/epayLaterView/callOTPApi',
-            method: "GET",
+            method: "POST",
             params: {
 							otp: otp,
-							requestId : requestId,
 							phone : phone,
 							mdnid : mdnid
 						}

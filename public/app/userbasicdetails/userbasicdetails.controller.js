@@ -21,10 +21,9 @@
 		activate();
 
 		///////////////////////////
-
-		function activate(){
-
-		}
+               function activate(){
+                 roService.checkUserIsLoggedIn($state.params.userId);
+        		}
 
 
 		function returnPartial(view){

@@ -45,7 +45,7 @@
 				//params will consist of the list of parameter(comma separated) that need to be passed in API call
        $http({
                   url : 'https://dev.epaylater.in/epayLaterView/saveUserDetails',
-                  method: "GET",
+                  method: "POST",
                   dataType: 'json',
                   params: {
       							firstName: user.firstname,

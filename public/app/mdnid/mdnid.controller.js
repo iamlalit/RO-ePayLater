@@ -10,6 +10,8 @@
 		vm.phoneNumberRegex = '\\d{10}';
 		vm.mdnidregex = '\\d{10}';
 		vm.submitMdnidForm = submitMdnidForm;
+		vm.errorText="";
+		vm.loginFailed=false;
 		activate();
 
 		///////////////////////////
@@ -35,6 +37,12 @@
 				loaderService.toggle(false);
 				roService.login(data.userId);
 				$state.go('otp',{userId : data.userId,requestId : data.requestId,phone : data.phone,mdnid : data.mdnid });
+			}
+			else if(data.status == false)
+			{
+			 loaderService.toggle(false);
+			 vm.loginFailed = true;
+             vm.errorText = data.error_text;
 			}
 		}
 		//this is the function called when error is return from api call

@@ -3,9 +3,9 @@
 	angular.module('otp.module')
 		.controller('otpCntl', otpCntl);
 
-	otpCntl.$inject = ['otpService','$state'];
+	otpCntl.$inject = ['otpService','$state','roService','$scope'];
 
-	function otpCntl(otpService,$state){
+	function otpCntl(otpService,$state,roService,$scope){
 		var vm = this;
 		vm.submitOtpForm = submitOtpForm;
 
@@ -14,16 +14,15 @@
 		///////////////////////////
 
 		function activate(){
-
+         roService.checkUserIsLoggedIn($state.params.userId);
 		}
 
 		function submitOtpForm(isValid){
-			debugger;
 			if(isValid){
 				//this API will call when user passed out of form validations
 				//this API function(getAuthenticatedUser) is written inside the services
 				//this will either return success(resolveAuthenticatedUser) or error message(errorAuthenticatedUser)
-				otpService.getAuthenticatedUser(vm.otp,$state.params.requestId,$state.params.phone,$state.params.mdnid).then(resolveAuthenticatedUser, errorAuthenticatedUser);
+				otpService.getAuthenticatedUser(vm.otp,$state.params.phone,$state.params.mdnid).then(resolveAuthenticatedUser, errorAuthenticatedUser);
 			}
 		}
 		//this is the function called when success is return from api call
