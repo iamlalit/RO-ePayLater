@@ -3,9 +3,9 @@
 	angular.module('userloandetails.module')
 		.controller('userloandetailsCntl', userloandetailsCntl);
 
-	userloandetailsCntl.$inject = ['userloandetailsService', '$scope', '$timeout','roService','$state','$http'];
+	userloandetailsCntl.$inject = ['userloandetailsService', '$scope', '$timeout','roService','$state','$http','loaderService'];
 
-	function userloandetailsCntl(userloandetailsService, $scope, $timeout,roService,$state,$http){
+	function userloandetailsCntl(userloandetailsService, $scope, $timeout,roService,$state,$http,loaderService){
 		var vm = this;
 		vm.userloandetails = [];
 		vm.returnPartial = returnPartial;
@@ -29,6 +29,7 @@
 
 		function submitUserLoanDetailsForm(isValid){
 			if(isValid){
+				loaderService.toggle(true);
 				//this API will call when user passed out of form validations
 				//this API function(saveUserBasicDetails) is written inside the services
 				//this will either return success(resolveUserDetails) or error message(errorUserDetails)
@@ -38,8 +39,9 @@
 		//this is the function called when success is return from api call
 		function resolveUserDetails(data){
 			if(data.status == true){
-				$state.go('thankyou');
+				$state.go('thankyou',{userId: $state.params.userId});
 				//data is posted successfully
+					loaderService.toggle(false);
 			}
 		}
 			function logout(){
@@ -47,6 +49,7 @@
                    		}
 		//this is the function called when error is return from api call
 		function errorUserDetails(error){
+			loaderService.toggle(false);
 			console.log(error);
 		}
 
