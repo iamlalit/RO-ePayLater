@@ -17,7 +17,6 @@
 				url: '/otp',
 				 params: {
                     userId: null,
-                    requestId : null,
                     phone : null,
                     mdnid : null
                              },

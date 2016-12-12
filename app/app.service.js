@@ -11,7 +11,8 @@
 
 		service = {
 			logout: logout,
-			login : login
+			login : login,
+			checkUserIsLoggedIn : checkUserIsLoggedIn
 		}
 		//this is how you need to add
 		//$window.sessionStorage.setItem("userId", "12");
@@ -25,6 +26,15 @@
 
 		function login(userId){
 			$window.sessionStorage.setItem("userId", userId);
+		}
+
+		function checkUserIsLoggedIn(userId)
+		{
+		if(userId==null)
+        		   {
+                   logout();
+        		   }
+
 		}
 	}
 })();

@@ -5,6 +5,9 @@
         <div class="col-xs-12">
           <div class="well well-ro">
             <form novalidate="true" name="mdnidForm" ng-submit="ro.submitMdnidForm(mdnidForm.$valid)">
+              <div>
+                <span>{{ro.errorText}}</span>
+              </div>
               <div class="form-group"  data-ng-init="buttonMdnidFormClicked = false">
                 <label>MDN ID</label>
                 <div class="row">

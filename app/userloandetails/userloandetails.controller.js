@@ -20,8 +20,8 @@
 		///////////////////////////
 
 		function activate(){
-
-		}
+                         roService.checkUserIsLoggedIn($state.params.userId);
+                		}
 
 		function returnPartial(view){
 			return './shared/partial/_' + view + '.html';
