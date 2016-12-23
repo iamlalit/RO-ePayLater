@@ -58,10 +58,12 @@
 		}
 
 		function uploadCopy(id){
+
 			document.getElementById(id).click();
 		}
 		$scope.fileNameChangedIdProof = function(e){
-
+			console.log(vm.userloandetails.idProofs.value);
+			 document.getElementById("lbluploadedIdFileName").innerHTML = document.getElementById("idProof1").value;
 			if (!vm.userloandetails.idProofs.value)
 					vm.userloandetails.idProofs.value = [];
 

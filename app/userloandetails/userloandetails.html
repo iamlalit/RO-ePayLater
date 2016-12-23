@@ -80,14 +80,15 @@
                     <label>Upload ID Proof (PAN, or Passport, or Voter ID)</label>
                     <div data-ng-repeat="idProof in ro.userloandetails.idProofs" class="padding bottom-0x">
                       <input type="file" accept="image/*"  id="{{idProof.id}}" onchange="angular.element(this).scope().fileNameChangedIdProof(event)" class="hide" data-ng-model="ro.userloandetails.idProof[$index]" name="idProof"/>
-                      <button type="button" class="btn btn-default" data-ng-click="ro.uploadCopy(idProof.id)">Upload ID Proof</button>
+                      <button type="button" class="btn btn-default" data-ng-click="ro.uploadCopy(idProof.id)" style="display:inline-block">Upload ID Proof</button>
+                      <label id="lbluploadedIdFileName" style="display:inline-block"></label>
                       <span>{{ro.userloandetails.idProofs[$index].fakeValue}}</span>
                     </div>
-                      <!--
-                    <div>
-                      <a href="javascript:void(0)" data-ng-click="ro.addMoreItems(ro.userloandetails.idProofs, 'idProof')">Add more ID Proof</a>
-                    </div>
-                    -->
+                    <!--
+                  <div>
+                    <a href="javascript:void(0)" data-ng-click="ro.addMoreItems(ro.userloandetails.idProofs, 'idProof')">Add more ID Proof</a>
+                  </div>
+                  -->
                   </div>
                 </div>
               </div>
@@ -108,26 +109,26 @@
                   </div>
                 </div>
               </div>
-            <!--
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label>Upload Photo</label>
-                    <input type="file" accept="image/*" class="hide" data-ng-model="ro.userloaddetails.uploadPhoto"/>
-                    <button type="button" class="btn btn-default" >Upload Photo</button>
+              <!--
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label>Upload Photo</label>
+                      <input type="file" accept="image/*" class="hide" data-ng-model="ro.userloaddetails.uploadPhoto"/>
+                      <button type="button" class="btn btn-default" >Upload Photo</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label>Bank statement (last six months)</label>
-                    <input type="file" class="hide" data-ng-model="ro.userloaddetails.bankStatement"/>
-                    <button type="button" class="btn btn-default" >Bank Statement</button>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label>Bank statement (last six months)</label>
+                      <input type="file" class="hide" data-ng-model="ro.userloaddetails.bankStatement"/>
+                      <button type="button" class="btn btn-default" >Bank Statement</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            -->
+              -->
               <div class="row padding top-2x">
                 <div class="col-xs-12">
                   <p>Following conditions apply</p>
@@ -139,10 +140,25 @@
                 </div>
               </div>
               <div class="row padding top-2x">
-                <div class="col-xs-12">
-                  <div class="form-group">
-                    <div class="checkbox">
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <!--<div class="checkbox">
                       <label><input type="checkbox" name="scannedCopy"/>  I agree to the above terms and conditions</label>
+                    </div>-->
+                    <!-- <div class="checkbox">
+                            <label><input type="checkbox" name="scannedCopy" ng-model="ro.userLoanDetails.scannedCopy" data-ng-init="ro.userLoanDetails.scannedCopy = undefined" ng-true-value="true" ng-false-value="undefined" data-ng-class="{'validation-error': ro.userLoanDetails.scannedCopy == undefined && buttonUserLoanDetailsFormClicked}" data-container="body" data-toggle="popover" data-placement="left" data-content="Please accept the terms and conditions before proceeding." />  I agree to the above terms and conditions</label>
+                    </div> -->
+                    <div class="input-group">
+                      <input type="checkbox" name="scannedCopy" data-trigger="manual"
+                             ng-model="ro.userLoanDetails.scannedCopy" required
+                             data-ng-class="{'validation-error': !ro.userLoanDetails.scannedCopy}"
+                             data-container="body"
+                             data-placement="left"
+                             data-content="{{ro.userLoanDetails.scannedCopy.$error.required ? '': 'Please accept the terms and conditions before proceeding.'}}"
+                             ng-true-value="true"
+                             ng-false-value="false" />
+                      <label style="display:inline-block;margin-left:5px;" >   I agree to the above terms and conditions</label>
+                      <span class="input-group-addon exclamation hidden-xs" data-ng-show="!userloandetails.scannedCopy.$valid && (buttonUserLoanDetailsFormClicked || !userloandetails.scannedCopy.$pristine)"><i class="fa fa-exclamation-circle" popover-trig></i></span>
                     </div>
                   </div>
                 </div>
